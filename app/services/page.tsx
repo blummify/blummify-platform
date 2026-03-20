@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ServicesPage() {
   return (
     <main className="px-8 pb-16 max-w-7xl mx-auto">
-      <section className="sticky top-24 z-40 relative overflow-hidden rounded-[3rem] bg-surface-container-lowest p-10 lg:p-16 shadow-sm">
+      <section className="sticky top-[68px] z-40 relative overflow-hidden rounded-[3rem] bg-surface-container-lowest p-10 lg:p-16 shadow-sm">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary-container/25 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
         <div className="relative z-10 max-w-3xl">

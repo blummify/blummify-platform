@@ -86,7 +86,7 @@ export default function RootLayout({
             </Link>
           </div>
         </header>
-        <div className="flex-1 pt-24">{children}</div>
+        <div className="flex-1 pt-[68px]">{children}</div>
         <footer className="bg-[#EFEDEF] w-full py-12">
           <div className="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
             <div className="mb-8 md:mb-0 text-center md:text-left">
