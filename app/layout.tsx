@@ -58,6 +58,12 @@ export default function RootLayout({
             <nav className="hidden md:flex items-center space-x-8 font-headline font-medium text-sm tracking-tight">
               <Link
                 className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
+                href="/"
+              >
+                Home
+              </Link>
+              <Link
+                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
                 href="/about"
               >
                 About

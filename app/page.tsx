@@ -10,6 +10,7 @@ export default function Home() {
       <IntentBento />
       <CoreSpecializations />
       <FeaturedProjects />
+      <Testimonials />
       <CTA />
     </main>
   );
@@ -207,110 +208,125 @@ function IntentBento() {
 }
 
 function CoreSpecializations() {
+  const services = [
+    {
+      icon: "language",
+      title: "Web Development",
+      description:
+        "Modern websites and web apps engineered for performance, accessibility, and maintainability.",
+      metric: "Fast delivery",
+      imageSrc:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
+      imageAlt: "Abstract data visualization with clean green lines",
+    },
+    {
+      icon: "smartphone",
+      title: "Mobile Application Development",
+      description:
+        "iOS and Android apps built for reliability, speed, and a polished user experience.",
+      metric: "Reliable apps",
+      imageSrc:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw",
+      imageAlt: "Close up of hands working on a sleek laptop",
+    },
+    {
+      icon: "palette",
+      title: "Branding Design",
+      description:
+        "A cohesive identity and UI system that elevates trust, clarity, and conversion.",
+      metric: "Premium look",
+      imageSrc:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g",
+      imageAlt: "Modern office team collaborating in a bright airy space",
+    },
+    {
+      icon: "campaign",
+      title: "Digital Marketing",
+      description:
+        "Growth strategy and execution designed to increase visibility and capture qualified leads.",
+      metric: "Lead growth",
+      imageSrc:
+        "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
+      imageAlt: "Abstract data visualization with clean green lines",
+    },
+  ] as const;
+
   return (
     <section id="services" className="py-24 px-8 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
-        <div className="max-w-2xl">
-          <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight">
-            Services
-          </h2>
-          <p className="mt-4 text-on-surface-variant font-body">
-            Four focused offerings to help you ship, scale, and stand out.
-          </p>
-        </div>
+      <div className="text-center max-w-3xl mx-auto">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase font-label">
+          <span className="material-symbols-outlined text-[18px]">stars</span>
+          World-Class Services
+        </span>
+        <h2 className="mt-6 text-4xl lg:text-5xl font-headline font-bold tracking-tight text-on-surface">
+          Tailored Solutions Driving Real Results
+        </h2>
+        <p className="mt-5 text-on-surface-variant font-body leading-relaxed">
+          From web and mobile delivery to brand and growth, we integrate where
+          it&apos;s needed most and ship work that lasts.
+        </p>
+      </div>
+
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {services.map((service) => (
+          <div
+            key={service.title}
+            className="bg-surface-container-lowest rounded-[2rem] p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div className="relative w-full h-40 rounded-2xl overflow-hidden bg-surface-container">
+              <Image
+                src={service.imageSrc}
+                alt={service.imageAlt}
+                fill
+                sizes="(min-width: 1024px) 320px, 100vw"
+                className="object-cover"
+              />
+              <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">
+                <span className="material-symbols-outlined text-primary">
+                  {service.icon}
+                </span>
+              </span>
+              <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-bold font-label text-on-surface shadow-sm">
+                {service.metric}
+              </span>
+            </div>
+
+            <h3 className="mt-6 text-xl font-headline font-bold text-on-surface">
+              {service.title}
+            </h3>
+            <p className="mt-3 text-sm text-on-surface-variant font-body leading-relaxed">
+              {service.description}
+            </p>
+            <div className="mt-6 flex items-center justify-between">
+              <Link
+                href="/services"
+                className="text-primary font-bold font-headline inline-flex items-center gap-2 hover:gap-3 transition-all"
+              >
+                Explore service{" "}
+                <span className="material-symbols-outlined">arrow_forward</span>
+              </Link>
+              <Link
+                href="/contact"
+                className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                aria-label="Get started"
+              >
+                <span className="material-symbols-outlined text-primary">
+                  call_made
+                </span>
+              </Link>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 flex justify-center">
         <Link
           href="/services"
-          className="inline-flex items-center gap-2 text-primary font-bold font-headline hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
         >
           See all services{" "}
           <span className="material-symbols-outlined">arrow_forward</span>
         </Link>
-      </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
-          <div className="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center mb-8">
-            <span className="material-symbols-outlined text-on-primary-fixed text-4xl">
-              language
-            </span>
-          </div>
-          <h3 className="text-2xl font-headline font-bold mb-4">
-            Web Development
-          </h3>
-          <p className="text-on-surface-variant font-body">
-            Modern, high-performance websites and web apps built for growth and
-            maintainability.
-          </p>
-          <Link
-            className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="/services"
-          >
-            Learn More{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
-          <div className="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center mb-8">
-            <span className="material-symbols-outlined text-on-secondary-fixed text-4xl">
-              smartphone
-            </span>
-          </div>
-          <h3 className="text-2xl font-headline font-bold mb-4">
-            Mobile Application Development
-          </h3>
-          <p className="text-on-surface-variant font-body">
-            iOS and Android apps designed for reliability, performance, and a
-            polished user experience.
-          </p>
-          <Link
-            className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="/services"
-          >
-            Learn More{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
-          <div className="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center mb-8">
-            <span className="material-symbols-outlined text-on-tertiary-fixed text-4xl">
-              palette
-            </span>
-          </div>
-          <h3 className="text-2xl font-headline font-bold mb-4">
-            Branding Design
-          </h3>
-          <p className="text-on-surface-variant font-body">
-            Brand identity systems, UI kits, and visual direction that make your
-            product feel premium.
-          </p>
-          <Link
-            className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="/services"
-          >
-            Learn More{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
-          <div className="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center mb-8">
-            <span className="material-symbols-outlined text-on-primary-container text-4xl">
-              campaign
-            </span>
-          </div>
-          <h3 className="text-2xl font-headline font-bold mb-4">
-            Digital Marketing
-          </h3>
-          <p className="text-on-surface-variant font-body">
-            Performance-focused campaigns and content that increase visibility
-            and qualified leads.
-          </p>
-          <Link
-            className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="/services"
-          >
-            Learn More{" "}
-            <span className="material-symbols-outlined">arrow_forward</span>
-          </Link>
-        </div>
       </div>
     </section>
   );
@@ -379,6 +395,85 @@ function FeaturedProjects() {
             </Link>
           ))}
         </div>
+      </div>
+    </section>
+  );
+}
+
+function Testimonials() {
+  const testimonials = [
+    {
+      quote:
+        "Blummify felt like an extension of our team. They delivered quickly, communicated clearly, and elevated the quality of our product experience.",
+      name: "Client Partner",
+      title: "Founder",
+      company: "Product Studio",
+      initials: "CP",
+    },
+    {
+      quote:
+        "From strategy to execution, the process was structured and dependable. The end result looks modern, performs well, and is easy for our team to maintain.",
+      name: "Operations Lead",
+      title: "Director",
+      company: "Services Company",
+      initials: "OL",
+    },
+    {
+      quote:
+        "Great attention to detail. The UI polish and motion made the brand feel premium, and the rollout was smooth with no surprises.",
+      name: "Product Owner",
+      title: "PM",
+      company: "Growth Team",
+      initials: "PO",
+    },
+  ] as const;
+
+  return (
+    <section className="py-24 px-8 max-w-7xl mx-auto">
+      <div className="text-center max-w-3xl mx-auto">
+        <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase font-label">
+          <span className="material-symbols-outlined text-[18px]">star</span>
+          Client Success Stories
+        </span>
+        <h2 className="mt-6 text-4xl lg:text-6xl font-headline font-bold tracking-tight text-on-surface">
+          Strong Partnerships. Stronger Results.
+        </h2>
+        <p className="mt-5 text-on-surface-variant font-body leading-relaxed">
+          Trusted by teams who need clarity, quality, and consistent delivery.
+        </p>
+      </div>
+
+      <div className="mt-14 grid grid-cols-1 md:grid-cols-3 gap-6">
+        {testimonials.map((t) => (
+          <div
+            key={t.quote}
+            className="bg-surface-container-lowest rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div className="flex items-center gap-1 text-primary">
+              <span className="material-symbols-outlined text-[18px]">star</span>
+              <span className="material-symbols-outlined text-[18px]">star</span>
+              <span className="material-symbols-outlined text-[18px]">star</span>
+              <span className="material-symbols-outlined text-[18px]">star</span>
+              <span className="material-symbols-outlined text-[18px]">star</span>
+            </div>
+            <p className="mt-6 text-on-surface-variant font-body leading-relaxed">
+              “{t.quote}”
+            </p>
+            <div className="mt-8 flex items-center gap-4">
+              <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center font-headline font-bold text-primary">
+                {t.initials}
+              </div>
+              <div>
+                <p className="font-headline font-bold text-on-surface">
+                  {t.name}
+                </p>
+                <p className="text-xs text-on-surface-variant font-body">
+                  {t.title}, {t.company}
+                </p>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
     </section>
   );

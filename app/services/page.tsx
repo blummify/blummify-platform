@@ -13,18 +13,7 @@ export default function ServicesPage() {
         src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
         alt: "Abstract data visualization with clean green lines",
       },
-      offers: [
-        "Product and marketing websites",
-        "Web application development",
-        "API development and integrations",
-        "Performance and SEO optimization",
-        "Testing, QA, and release automation",
-      ],
-      reasons: [
-        "Production-grade engineering standards",
-        "Design-forward implementation that feels premium",
-        "Fast iteration cycles without breaking quality",
-      ],
+      metric: "Fast delivery",
     },
     {
       id: "mobile-application-development",
@@ -36,18 +25,7 @@ export default function ServicesPage() {
         src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw",
         alt: "Close up of hands working on a sleek laptop",
       },
-      offers: [
-        "Cross-platform or native delivery",
-        "Authentication and secure data flows",
-        "Payments, subscriptions, and in-app purchases",
-        "Offline-first experiences and sync",
-        "Analytics, events, and experimentation",
-      ],
-      reasons: [
-        "Polished UX with consistent design systems",
-        "Stable releases with QA baked in",
-        "Architecture that scales as features grow",
-      ],
+      metric: "Reliable apps",
     },
     {
       id: "branding-design",
@@ -59,18 +37,7 @@ export default function ServicesPage() {
         src: "https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g",
         alt: "Modern office team collaborating in a bright airy space",
       },
-      offers: [
-        "Brand identity and visual direction",
-        "Design systems and component libraries",
-        "UI/UX for web and mobile",
-        "Landing pages and conversion flows",
-        "Prototyping and design handoff",
-      ],
-      reasons: [
-        "Modern aesthetics grounded in usability",
-        "Clear messaging hierarchy and structure",
-        "Reusable UI foundations for faster shipping",
-      ],
+      metric: "Premium look",
     },
     {
       id: "digital-marketing",
@@ -82,18 +49,7 @@ export default function ServicesPage() {
         src: "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
         alt: "Abstract data visualization with clean green lines",
       },
-      offers: [
-        "Content and SEO strategy",
-        "Landing pages and funnel optimization",
-        "Campaign creative and iteration",
-        "Analytics and reporting cadence",
-        "Lifecycle messaging and retention",
-      ],
-      reasons: [
-        "Data-backed decisions and clear reporting",
-        "Conversion-first messaging and design",
-        "Systems that compound over time",
-      ],
+      metric: "Lead growth",
     },
   ] as const;
 
@@ -131,113 +87,77 @@ export default function ServicesPage() {
 
       <div className="px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="mt-8 flex flex-wrap gap-3">
-            {services.map((service) => (
-              <a
-                key={service.id}
-                href={`#${service.id}`}
-                className="px-4 py-2 rounded-full bg-surface-container-lowest text-on-surface font-headline font-bold text-sm transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg"
-              >
-                {service.title}
-              </a>
-            ))}
-          </div>
+          <section className="mt-14">
+            <div className="text-center max-w-3xl mx-auto">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase font-label">
+                <span className="material-symbols-outlined text-[18px]">
+                  stars
+                </span>
+                World-Class Services
+              </span>
+              <h2 className="mt-6 text-4xl lg:text-5xl font-headline font-bold tracking-tight text-on-surface">
+                Tailored Solutions Driving Real Results
+              </h2>
+              <p className="mt-5 text-on-surface-variant font-body leading-relaxed">
+                From web and mobile delivery to brand and growth, our team
+                integrates where it&apos;s needed most and ships work that lasts.
+              </p>
+            </div>
 
-          <div className="mt-10 space-y-8">
-            {services.map((service) => (
-              <section
-                key={service.id}
-                id={service.id}
-                className="bg-surface-container-lowest rounded-[3rem] p-10 lg:p-14 transition-all duration-500 hover:shadow-2xl"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-                  <div className="lg:col-span-5">
-                    <div className="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center">
-                      <span className="material-symbols-outlined text-primary text-3xl">
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((service) => (
+                <div
+                  key={service.id}
+                  className="bg-surface-container-lowest rounded-[2rem] p-6 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                >
+                  <div className="relative w-full h-40 rounded-2xl overflow-hidden bg-surface-container">
+                    <Image
+                      src={service.image.src}
+                      alt={service.image.alt}
+                      fill
+                      sizes="(min-width: 1024px) 320px, 100vw"
+                      className="object-cover"
+                    />
+                    <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">
+                      <span className="material-symbols-outlined text-primary">
                         {service.icon}
                       </span>
-                    </div>
-                    <h2 className="mt-6 text-3xl lg:text-4xl font-headline font-bold text-on-surface">
-                      {service.title}
-                    </h2>
-                    <p className="mt-4 text-on-surface-variant font-body leading-relaxed">
-                      {service.description}
-                    </p>
-                    <div className="mt-8 flex flex-wrap gap-4">
-                      <Link
-                        href="/contact"
-                        className="bg-signature-gradient text-on-primary px-7 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
-                      >
-                        Get started
-                      </Link>
-                      <Link
-                        href="/projects"
-                        className="bg-surface-container-highest text-on-surface px-7 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
-                      >
-                        View projects
-                      </Link>
-                    </div>
+                    </span>
+                    <span className="absolute bottom-3 right-3 px-3 py-1 rounded-full bg-white/90 backdrop-blur text-xs font-bold font-label text-on-surface shadow-sm">
+                      {service.metric}
+                    </span>
                   </div>
 
-                  <div className="lg:col-span-7 grid grid-cols-1 gap-6">
-                    <div className="rounded-[2rem] bg-surface-container overflow-hidden">
-                      <div className="relative w-full h-56">
-                        <Image
-                          src={service.image.src}
-                          alt={service.image.alt}
-                          fill
-                          sizes="(min-width: 1024px) 720px, 100vw"
-                          className="object-cover"
-                        />
-                      </div>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div className="rounded-[2rem] bg-surface-container p-8">
-                        <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                          What we offer
-                        </p>
-                        <ul className="mt-5 space-y-3 text-on-surface font-body">
-                          {service.offers.map((item) => (
-                            <li key={item} className="flex gap-3">
-                              <span
-                                className="material-symbols-outlined text-primary"
-                                aria-hidden="true"
-                              >
-                                check_circle
-                              </span>
-                              <span className="text-on-surface-variant">
-                                {item}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                      <div className="rounded-[2rem] bg-surface-container p-8">
-                        <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                          Why Blummify
-                        </p>
-                        <ul className="mt-5 space-y-3 text-on-surface font-body">
-                          {service.reasons.map((item) => (
-                            <li key={item} className="flex gap-3">
-                              <span
-                                className="material-symbols-outlined text-primary"
-                                aria-hidden="true"
-                              >
-                                auto_awesome
-                              </span>
-                              <span className="text-on-surface-variant">
-                                {item}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                      </div>
-                    </div>
+                  <h3 className="mt-6 text-xl font-headline font-bold text-on-surface">
+                    {service.title}
+                  </h3>
+                  <p className="mt-3 text-sm text-on-surface-variant font-body leading-relaxed">
+                    {service.description}
+                  </p>
+                  <div className="mt-6 flex items-center justify-between">
+                    <Link
+                      href="/contact"
+                      className="text-primary font-bold font-headline inline-flex items-center gap-2 hover:gap-3 transition-all"
+                    >
+                      Explore service{" "}
+                      <span className="material-symbols-outlined">
+                        arrow_forward
+                      </span>
+                    </Link>
+                    <Link
+                      href="/contact"
+                      className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center transition-transform duration-300 hover:scale-105"
+                      aria-label="Get started"
+                    >
+                      <span className="material-symbols-outlined text-primary">
+                        call_made
+                      </span>
+                    </Link>
                   </div>
                 </div>
-              </section>
-            ))}
-          </div>
+              ))}
+            </div>
+          </section>
 
           <div className="mt-14 bg-on-surface rounded-[3rem] p-10 lg:p-16 text-center overflow-hidden relative">
             <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
