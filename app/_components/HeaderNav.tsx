@@ -2,7 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useSyncExternalStore } from "react";
+import { createPortal } from "react-dom";
+
+function subscribeNoop() {
+  return () => {};
+}
 
 type NavItem = {
   href: string;
@@ -26,6 +31,11 @@ function isActivePath(pathname: string, item: NavItem) {
 export default function HeaderNav() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const mounted = useSyncExternalStore(
+    subscribeNoop,
+    () => true,
+    () => false
+  );
 
   useEffect(() => {
     if (!isOpen) return;
@@ -80,71 +90,77 @@ export default function HeaderNav() {
         </button>
       </div>
 
-      <div
-        className={`fixed inset-0 z-[60] ${
-          isOpen ? "pointer-events-auto" : "pointer-events-none"
-        }`}
-        aria-hidden={!isOpen}
-      >
-        <div
-          className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
-            isOpen ? "opacity-100" : "opacity-0"
-          }`}
-          onClick={() => setIsOpen(false)}
-        />
-        <div
-          role="dialog"
-          aria-modal="true"
-          className={`absolute top-0 right-0 h-full w-[86vw] max-w-sm bg-white shadow-2xl transition-transform duration-300 ${
-            isOpen ? "translate-x-0" : "translate-x-full"
-          }`}
-        >
-          <div className="p-6">
-            <div className="flex items-center justify-between">
-              <p className="font-headline font-bold text-on-surface">Menu</p>
-              <button
-                type="button"
-                aria-label="Close menu"
-                onClick={() => setIsOpen(false)}
-                className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface transition-all duration-300 active:scale-95"
-              >
-                <span className="material-symbols-outlined text-[22px]">
-                  close
-                </span>
-              </button>
-            </div>
-
-            <div className="mt-6 flex flex-col gap-2">
-              {navItems.map((item) => {
-                const isActive = isActivePath(pathname, item);
-                return (
-                  <Link
-                    key={item.href}
-                    href={item.href}
-                    aria-current={isActive ? "page" : undefined}
-                    onClick={() => setIsOpen(false)}
-                    className={`px-4 py-3 rounded-2xl font-headline font-bold transition-all ${
-                      isActive
-                        ? "bg-secondary-container text-on-secondary-container"
-                        : "bg-surface-container-lowest text-on-surface hover:bg-surface-container"
-                    }`}
-                  >
-                    {item.label}
-                  </Link>
-                );
-              })}
-            </div>
-
-            <Link
-              href="/contact"
+      {mounted &&
+        createPortal(
+          <div
+            className={`fixed inset-0 z-[60] min-h-dvh ${
+              isOpen ? "pointer-events-auto" : "pointer-events-none"
+            }`}
+            aria-hidden={!isOpen}
+          >
+            <div
+              className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+                isOpen ? "opacity-100" : "opacity-0"
+              }`}
               onClick={() => setIsOpen(false)}
-              className="mt-8 inline-flex w-full justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 active:scale-[0.99]"
+              aria-hidden
+            />
+            <div
+              role="dialog"
+              aria-modal="true"
+              aria-label="Main menu"
+              className={`absolute top-0 right-0 flex h-full min-h-dvh w-[86vw] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ${
+                isOpen ? "translate-x-0" : "translate-x-full"
+              }`}
             >
-              Get Started
-            </Link>
-          </div>
-        </div>
-      </div>
+              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto p-6">
+                <div className="flex shrink-0 items-center justify-between">
+                  <p className="font-headline font-bold text-on-surface">Menu</p>
+                  <button
+                    type="button"
+                    aria-label="Close menu"
+                    onClick={() => setIsOpen(false)}
+                    className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface transition-all duration-300 active:scale-95"
+                  >
+                    <span className="material-symbols-outlined text-[22px]">
+                      close
+                    </span>
+                  </button>
+                </div>
+
+                <div className="mt-6 flex flex-col gap-2">
+                  {navItems.map((item) => {
+                    const isActive = isActivePath(pathname, item);
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        aria-current={isActive ? "page" : undefined}
+                        onClick={() => setIsOpen(false)}
+                        className={`px-4 py-3 rounded-2xl font-headline font-bold transition-all ${
+                          isActive
+                            ? "bg-secondary-container text-on-secondary-container"
+                            : "bg-surface-container-lowest text-on-surface hover:bg-surface-container"
+                        }`}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+
+                <Link
+                  href="/contact"
+                  onClick={() => setIsOpen(false)}
+                  className="mt-8 inline-flex w-full shrink-0 justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 active:scale-[0.99]"
+                >
+                  Get Started
+                </Link>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }
