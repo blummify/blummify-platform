@@ -21,26 +21,47 @@ export default async function ProjectDetailPage({
 
   return (
     <main className="px-8 py-16 max-w-7xl mx-auto">
-      <div className="flex items-center gap-2 text-sm text-on-surface-variant font-body">
-        <Link href="/projects" className="hover:text-primary transition-colors">
-          Projects
-        </Link>
-        <span aria-hidden="true">/</span>
-        <span className="text-on-surface">{project.name}</span>
-      </div>
-
-      <div className="mt-8 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
-        <div className="lg:col-span-8">
-          <h1 className="text-4xl lg:text-6xl font-headline font-bold tracking-tight text-on-surface anim-fade-up">
+      <section className="sticky top-24 z-40 relative overflow-hidden rounded-[3rem] bg-surface-container-lowest p-10 lg:p-16 shadow-sm">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/15 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-container/20 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
+        <div className="relative z-10 max-w-3xl">
+          <div className="flex items-center gap-2 text-sm text-on-surface-variant font-body anim-fade-up">
+            <Link
+              href="/projects"
+              className="hover:text-primary transition-colors"
+            >
+              Projects
+            </Link>
+            <span aria-hidden="true">/</span>
+            <span className="text-on-surface">{project.name}</span>
+          </div>
+          <h1
+            className="mt-6 text-4xl lg:text-6xl font-headline font-bold tracking-tight text-on-surface anim-fade-up"
+            style={{ animationDelay: "90ms" }}
+          >
             {project.name}
           </h1>
           <p
             className="mt-5 text-lg text-on-surface-variant font-body leading-relaxed anim-fade-up"
-            style={{ animationDelay: "120ms" }}
+            style={{ animationDelay: "160ms" }}
           >
             {project.summary}
           </p>
+          <div className="mt-7 flex flex-wrap gap-2">
+            {project.services.map((s) => (
+              <span
+                key={s}
+                className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-label"
+              >
+                {s}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
 
+      <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+        <div className="lg:col-span-8">
           <section className="mt-10 bg-surface-container-lowest rounded-[2rem] p-8 transition-all duration-500 hover:shadow-xl">
             <h2 className="text-xl font-headline font-bold text-on-surface">
               Highlights
