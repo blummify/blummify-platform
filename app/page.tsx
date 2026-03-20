@@ -1,12 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { projects } from "./projects/_data";
+
 export default function Home() {
   return (
     <main>
       <Hero />
       <IntentBento />
       <CoreSpecializations />
+      <FeaturedProjects />
       <CTA />
     </main>
   );
@@ -14,75 +17,84 @@ export default function Home() {
 
 function Hero() {
   return (
-    <section
-      id="top"
-      className="relative px-8 py-20 lg:py-32 max-w-7xl mx-auto overflow-hidden"
-    >
-      <div className="grid lg:grid-cols-2 gap-16 items-center">
-        <div className="z-10">
-          <span
-            className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase mb-6 font-label anim-fade-up"
-            style={{ animationDelay: "40ms" }}
-          >
-            Innovation in Bloom
-          </span>
-          <h1
-            className="text-5xl lg:text-7xl font-headline font-bold text-on-surface leading-[1.1] tracking-tighter mb-8 anim-fade-up"
-            style={{ animationDelay: "120ms" }}
-          >
-            The Digital <span className="text-primary">Greenhouse</span> for
-            Business.
-          </h1>
-          <p
-            className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-body anim-fade-up"
-            style={{ animationDelay: "200ms" }}
-          >
-            Blummify is a software consulting company focused on helping teams
-            evolve and succeed through strategy, engineering, and data-driven
-            decisions.
-          </p>
-          <div
-            className="flex flex-wrap gap-4 anim-fade-up"
-            style={{ animationDelay: "280ms" }}
-          >
-            <Link
-              href="/contact"
-              className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
+    <section className="relative overflow-hidden">
+      <div className="absolute top-0 right-0 w-[42rem] h-[42rem] bg-secondary-container/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2 anim-ambient" />
+      <div className="absolute bottom-0 left-0 w-[42rem] h-[42rem] bg-primary-container/20 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2 anim-float" />
+      <div className="px-8 py-20 lg:py-32 max-w-7xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-16 items-center">
+          <div className="z-10">
+            <span
+              className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase mb-6 font-label anim-fade-up"
+              style={{ animationDelay: "40ms" }}
             >
-              Start Your Evolution
-            </Link>
-            <a
-              href="#method"
-              className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
+              Innovation in Bloom
+            </span>
+            <h1
+              className="text-5xl lg:text-7xl font-headline font-bold text-on-surface leading-[1.1] tracking-tighter mb-8 anim-fade-up"
+              style={{ animationDelay: "120ms" }}
             >
-              View Our Method
-            </a>
-          </div>
-        </div>
-        <div className="relative">
-          <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low anim-fade-in">
-            <Image
-              alt="Modern office team collaborating in a bright airy space"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
-              fill
-              sizes="(min-width: 1024px) 520px, 100vw"
-              className="object-cover"
-              priority
-            />
-          </div>
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-container/40 rounded-full blur-3xl anim-float" />
-          <div className="absolute top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-[100px] anim-ambient" />
-          <div className="absolute -bottom-10 right-10 bg-surface-container-lowest p-6 rounded-2xl shadow-xl flex items-center gap-4 anim-fade-up">
-            <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
-              <span className="material-symbols-outlined text-primary">
-                trending_up
+              The Digital <span className="text-primary">Greenhouse</span> for
+              Business.
+            </h1>
+            <p
+              className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-body anim-fade-up"
+              style={{ animationDelay: "200ms" }}
+            >
+              Blummify is a software consulting company focused on helping teams
+              evolve through web, mobile, branding, and marketing.
+            </p>
+            <div
+              className="flex flex-wrap gap-4 anim-fade-up"
+              style={{ animationDelay: "280ms" }}
+            >
+              <Link
+                href="/contact"
+                className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
+              >
+                Start Your Evolution
+              </Link>
+              <a
+                href="#method"
+                className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
+              >
+                View Our Method
+              </a>
+            </div>
+            <div className="mt-10 flex flex-wrap gap-3 text-xs font-bold tracking-wide text-on-surface-variant font-label">
+              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
+                Strategy-led delivery
+              </span>
+              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
+                Modern UI & motion
+              </span>
+              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
+                Built to scale
               </span>
             </div>
-            <div>
-              <p className="text-xs font-bold text-on-surface-variant font-label">
-                Efficiency
-              </p>
-              <p className="text-lg font-bold font-headline">+42% Growth</p>
+          </div>
+          <div className="relative">
+            <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low anim-fade-in">
+              <Image
+                alt="Modern office team collaborating in a bright airy space"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
+                fill
+                sizes="(min-width: 1024px) 520px, 100vw"
+                className="object-cover"
+                priority
+              />
+            </div>
+            <div className="absolute -bottom-10 right-10 bg-surface-container-lowest p-6 rounded-2xl shadow-xl flex items-center gap-4 anim-fade-up">
+              <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+                <span className="material-symbols-outlined text-primary">
+                  trending_up
+                </span>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-on-surface-variant font-label">
+                  Delivery
+                </p>
+                <p className="text-lg font-bold font-headline">Quality-first</p>
+              </div>
             </div>
           </div>
         </div>
@@ -197,11 +209,22 @@ function IntentBento() {
 function CoreSpecializations() {
   return (
     <section id="services" className="py-24 px-8 max-w-7xl mx-auto">
-      <div className="text-center mb-20">
-        <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight mb-4">
-          Services
-        </h2>
-        <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
+      <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div className="max-w-2xl">
+          <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight">
+            Services
+          </h2>
+          <p className="mt-4 text-on-surface-variant font-body">
+            Four focused offerings to help you ship, scale, and stand out.
+          </p>
+        </div>
+        <Link
+          href="/services"
+          className="inline-flex items-center gap-2 text-primary font-bold font-headline hover:gap-3 transition-all"
+        >
+          See all services{" "}
+          <span className="material-symbols-outlined">arrow_forward</span>
+        </Link>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
@@ -287,6 +310,74 @@ function CoreSpecializations() {
             Learn More{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedProjects() {
+  const featured = projects.slice(0, 3);
+
+  return (
+    <section className="bg-surface-container-low py-24">
+      <div className="px-8 max-w-7xl mx-auto">
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+          <div className="max-w-2xl">
+            <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight">
+              Featured Projects
+            </h2>
+            <p className="mt-4 text-on-surface-variant font-body">
+              A quick look at recent work across product builds, relaunches, and
+              growth engagements.
+            </p>
+          </div>
+          <Link
+            href="/projects"
+            className="inline-flex items-center gap-2 text-primary font-bold font-headline hover:gap-3 transition-all"
+          >
+            View all projects{" "}
+            <span className="material-symbols-outlined">arrow_forward</span>
+          </Link>
+        </div>
+
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featured.map((project) => (
+            <Link
+              key={project.slug}
+              href={`/projects/${project.slug}`}
+              className="group bg-surface-container-lowest rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+            >
+              <div className="relative w-full h-44">
+                <Image
+                  src={project.imageSrc}
+                  alt={project.imageAlt}
+                  fill
+                  sizes="(min-width: 1024px) 420px, 100vw"
+                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                />
+              </div>
+              <div className="p-8">
+                <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                  {project.year}
+                </p>
+                <h3 className="mt-3 text-2xl font-headline font-bold text-on-surface">
+                  {project.name}
+                </h3>
+                <p className="mt-4 text-on-surface-variant font-body leading-relaxed">
+                  {project.summary}
+                </p>
+                <div className="mt-6 flex items-center justify-between">
+                  <span className="text-primary font-bold font-headline">
+                    View details
+                  </span>
+                  <span className="material-symbols-outlined text-primary transition-transform duration-300 group-hover:translate-x-1">
+                    arrow_forward
+                  </span>
+                </div>
+              </div>
+            </Link>
+          ))}
         </div>
       </div>
     </section>
