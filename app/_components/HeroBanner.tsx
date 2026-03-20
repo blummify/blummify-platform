@@ -96,6 +96,7 @@ export default function HeroBanner() {
               alt={img.alt}
               fill
               sizes="100vw"
+              quality={92}
               className="object-cover"
               priority={index === 0}
             />

@@ -115,7 +115,8 @@ export default function ServicesPage() {
                       src={service.image.src}
                       alt={service.image.alt}
                       fill
-                      sizes="(min-width: 1024px) 320px, 100vw"
+                      sizes="(min-width: 1024px) 360px, 100vw"
+                      quality={90}
                       className="object-cover"
                     />
                     <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">

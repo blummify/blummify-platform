@@ -57,6 +57,7 @@ function IntentBento() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw"
                   fill
                   sizes="(min-width: 768px) 640px, 100vw"
+                  quality={90}
                   className="object-cover grayscale transition-all duration-700 hover:grayscale-0"
                 />
               </div>
@@ -109,6 +110,7 @@ function IntentBento() {
                   src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw"
                   fill
                   sizes="(min-width: 768px) 240px, 100vw"
+                  quality={90}
                   className="object-cover"
                 />
               </div>
@@ -191,7 +193,8 @@ function CoreSpecializations() {
                 src={service.imageSrc}
                 alt={service.imageAlt}
                 fill
-                sizes="(min-width: 1024px) 320px, 100vw"
+                sizes="(min-width: 1024px) 360px, 100vw"
+                quality={90}
                 className="object-cover"
               />
               <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">
@@ -282,7 +285,8 @@ function FeaturedProjects() {
                   src={project.imageSrc}
                   alt={project.imageAlt}
                   fill
-                  sizes="(min-width: 1024px) 420px, 100vw"
+                  sizes="(min-width: 1024px) 520px, 100vw"
+                  quality={90}
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
                 />
               </div>

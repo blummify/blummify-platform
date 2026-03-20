@@ -42,19 +42,19 @@ export default function RootLayout({
           <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
             <Link
               href="/"
-              className="flex items-center gap-3 font-headline font-bold text-[#1B1C1D] tracking-tighter transition-transform duration-300 hover:-translate-y-0.5"
+              className="flex items-center font-headline font-bold text-[#1B1C1D] tracking-tighter transition-transform duration-300 hover:-translate-y-0.5"
+              aria-label="Blummify Home"
             >
-              <span className="relative w-9 h-9 rounded-full bg-white overflow-hidden shadow-sm">
+              <span className="relative w-12 h-12 rounded-full bg-white overflow-hidden shadow-sm">
                 <Image
                   src="/blummifly-logo.jpeg"
                   alt="Blummify"
                   fill
-                  sizes="36px"
+                  sizes="48px"
                   className="object-cover"
                   priority
                 />
               </span>
-              <span className="text-2xl">Blummify</span>
             </Link>
             <HeaderNav />
             <Link
