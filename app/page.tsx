@@ -1,57 +1,14 @@
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Home() {
   return (
-    <>
-      <TopNav />
-      <main className="pt-24">
-        <Hero />
-        <IntentBento />
-        <CoreSpecializations />
-        <CTA />
-      </main>
-      <Footer />
-      <BackToTop />
-    </>
-  );
-}
-
-function TopNav() {
-  return (
-    <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
-      <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
-        <a
-          href="#top"
-          className="text-2xl font-bold text-[#1B1C1D] tracking-tighter font-headline transition-transform duration-300 hover:-translate-y-0.5"
-        >
-          Blummify
-        </a>
-        <div className="hidden md:flex items-center space-x-8 font-headline font-medium text-sm tracking-tight">
-          <a
-            className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-            href="#about"
-          >
-            About
-          </a>
-          <a
-            className="text-[#7AD0A4] font-bold border-b-2 border-[#7AD0A4] pb-1"
-            href="#services"
-          >
-            Services
-          </a>
-          <a
-            className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-            href="#contact"
-          >
-            Contact
-          </a>
-        </div>
-        <a
-          href="#contact"
-          className="bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
-        >
-          Get Started
-        </a>
-      </div>
-    </nav>
+    <main>
+      <Hero />
+      <IntentBento />
+      <CoreSpecializations />
+      <CTA />
+    </main>
   );
 }
 
@@ -88,12 +45,12 @@ function Hero() {
             className="flex flex-wrap gap-4 anim-fade-up"
             style={{ animationDelay: "280ms" }}
           >
-            <a
-              href="#contact"
+            <Link
+              href="/contact"
               className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
             >
               Start Your Evolution
-            </a>
+            </Link>
             <a
               href="#method"
               className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
@@ -104,10 +61,13 @@ function Hero() {
         </div>
         <div className="relative">
           <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low anim-fade-in">
-            <img
-              className="w-full h-full object-cover"
+            <Image
               alt="Modern office team collaborating in a bright airy space"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
+              fill
+              sizes="(min-width: 1024px) 520px, 100vw"
+              className="object-cover"
+              priority
             />
           </div>
           <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-container/40 rounded-full blur-3xl anim-float" />
@@ -165,11 +125,15 @@ function IntentBento() {
               </p>
             </div>
             <div className="h-48 w-full bg-surface-container-low rounded-xl overflow-hidden">
-              <img
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                alt="Abstract data visualization with clean green lines"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  alt="Abstract data visualization with clean green lines"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw"
+                  fill
+                  sizes="(min-width: 768px) 640px, 100vw"
+                  className="object-cover grayscale transition-all duration-700 hover:grayscale-0"
+                />
+              </div>
             </div>
           </div>
           <div className="md:col-span-4 bg-signature-gradient p-10 rounded-[2rem] text-on-primary flex flex-col justify-center items-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
@@ -213,11 +177,15 @@ function IntentBento() {
               </p>
             </div>
             <div className="w-full md:w-1/3 aspect-square bg-secondary-fixed rounded-2xl overflow-hidden">
-              <img
-                className="w-full h-full object-cover"
-                alt="Close up of hands working on a sleek laptop"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw"
-              />
+              <div className="relative w-full h-full">
+                <Image
+                  alt="Close up of hands working on a sleek laptop"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw"
+                  fill
+                  sizes="(min-width: 768px) 240px, 100vw"
+                  className="object-cover"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -249,13 +217,13 @@ function CoreSpecializations() {
             Modern, high-performance websites and web apps built for growth and
             maintainability.
           </p>
-          <a
+          <Link
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="#contact"
+            href="/services"
           >
             Learn More{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center mb-8">
@@ -270,13 +238,13 @@ function CoreSpecializations() {
             iOS and Android apps designed for reliability, performance, and a
             polished user experience.
           </p>
-          <a
+          <Link
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="#contact"
+            href="/services"
           >
             Learn More{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center mb-8">
@@ -291,13 +259,13 @@ function CoreSpecializations() {
             Brand identity systems, UI kits, and visual direction that make your
             product feel premium.
           </p>
-          <a
+          <Link
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="#contact"
+            href="/services"
           >
             Learn More{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center mb-8">
@@ -312,13 +280,13 @@ function CoreSpecializations() {
             Performance-focused campaigns and content that increase visibility
             and qualified leads.
           </p>
-          <a
+          <Link
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
-            href="#contact"
+            href="/services"
           >
             Learn More{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -327,7 +295,7 @@ function CoreSpecializations() {
 
 function CTA() {
   return (
-    <section id="contact" className="mx-8 mb-24">
+    <section className="mx-8 mb-24">
       <div className="max-w-7xl mx-auto bg-on-surface rounded-[3rem] p-12 lg:p-24 text-center overflow-hidden relative">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
@@ -340,95 +308,20 @@ function CTA() {
           consultative approach.
         </p>
         <div className="flex flex-wrap justify-center gap-4 relative z-10">
-          <a
+          <Link
             className="bg-primary text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-primary-container hover:text-on-primary-container hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
-            href="mailto:hello@blummify.com"
+            href="/contact"
           >
             Schedule a Strategy Call
-          </a>
-          <a
+          </Link>
+          <Link
             className="border border-white/20 text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-white hover:text-on-surface hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
-            href="#case-studies"
+            href="/projects"
           >
-            Our Case Studies
-          </a>
+            View Projects
+          </Link>
         </div>
       </div>
     </section>
-  );
-}
-
-function Footer() {
-  return (
-    <footer className="bg-[#EFEDEF] w-full py-12">
-      <div className="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
-        <div id="about" className="mb-8 md:mb-0 text-center md:text-left">
-          <div className="text-xl font-bold text-[#1B1C1D] font-headline mb-2">
-            Blummify
-          </div>
-          <p className="font-body text-xs text-zinc-600">
-            © {new Date().getFullYear()} Blummify Consulting. All rights
-            reserved.
-          </p>
-        </div>
-        <div
-          id="insights"
-          className="flex flex-wrap justify-center gap-8 font-body text-xs"
-        >
-          <a
-            className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
-            href="#"
-          >
-            Privacy Policy
-          </a>
-          <a
-            className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
-            href="#"
-          >
-            Terms of Service
-          </a>
-          <a
-            className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
-            href="#"
-          >
-            Cookie Settings
-          </a>
-          <a
-            className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
-            href="mailto:hello@blummify.com"
-          >
-            Contact Us
-          </a>
-        </div>
-        <div id="case-studies" className="flex gap-4 mt-8 md:mt-0">
-          <a
-            className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all"
-            href="#"
-            aria-label="Website"
-          >
-            <span className="material-symbols-outlined text-sm">public</span>
-          </a>
-          <a
-            className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all"
-            href="#"
-            aria-label="Share"
-          >
-            <span className="material-symbols-outlined text-sm">share</span>
-          </a>
-        </div>
-      </div>
-    </footer>
-  );
-}
-
-function BackToTop() {
-  return (
-    <a
-      href="#top"
-      aria-label="Back to top"
-      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-on-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-white active:scale-95"
-    >
-      <span className="material-symbols-outlined text-[20px]">arrow_upward</span>
-    </a>
   );
 }
