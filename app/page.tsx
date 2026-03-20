@@ -9,6 +9,7 @@ export default function Home() {
         <CTA />
       </main>
       <Footer />
+      <BackToTop />
     </>
   );
 }
@@ -402,5 +403,17 @@ function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function BackToTop() {
+  return (
+    <a
+      href="#top"
+      aria-label="Back to top"
+      className="fixed bottom-6 right-6 z-50 w-11 h-11 rounded-full bg-white/90 backdrop-blur-md shadow-lg flex items-center justify-center text-on-surface transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:bg-white active:scale-95"
+    >
+      <span className="material-symbols-outlined text-[20px]">arrow_upward</span>
+    </a>
   );
 }
