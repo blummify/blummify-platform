@@ -2,105 +2,18 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { projects } from "./projects/_data";
+import HeroBanner from "./_components/HeroBanner";
 
 export default function Home() {
   return (
     <main>
-      <Hero />
+      <HeroBanner />
       <IntentBento />
       <CoreSpecializations />
       <FeaturedProjects />
       <Testimonials />
       <CTA />
     </main>
-  );
-}
-
-function Hero() {
-  return (
-    <section className="relative overflow-hidden">
-      <div className="absolute top-0 right-0 w-[42rem] h-[42rem] bg-secondary-container/30 rounded-full blur-[140px] -translate-y-1/2 translate-x-1/2 anim-ambient" />
-      <div className="absolute bottom-0 left-0 w-[42rem] h-[42rem] bg-primary-container/20 rounded-full blur-[140px] translate-y-1/2 -translate-x-1/2 anim-float" />
-      <div className="px-8 py-20 lg:py-32 max-w-7xl mx-auto">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
-          <div className="z-10">
-            <span
-              className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase mb-6 font-label anim-fade-up"
-              style={{ animationDelay: "40ms" }}
-            >
-              Innovation in Bloom
-            </span>
-            <h1
-              className="text-5xl lg:text-7xl font-headline font-bold text-on-surface leading-[1.1] tracking-tighter mb-8 anim-fade-up"
-              style={{ animationDelay: "120ms" }}
-            >
-              The Digital <span className="text-primary">Greenhouse</span> for
-              Business.
-            </h1>
-            <p
-              className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-body anim-fade-up"
-              style={{ animationDelay: "200ms" }}
-            >
-              Blummify is a software consulting company focused on helping teams
-              evolve through web, mobile, branding, and marketing.
-            </p>
-            <div
-              className="flex flex-wrap gap-4 anim-fade-up"
-              style={{ animationDelay: "280ms" }}
-            >
-              <Link
-                href="/contact"
-                className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
-              >
-                Start Your Evolution
-              </Link>
-              <a
-                href="#method"
-                className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
-              >
-                View Our Method
-              </a>
-            </div>
-            <div className="mt-10 flex flex-wrap gap-3 text-xs font-bold tracking-wide text-on-surface-variant font-label">
-              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
-                Strategy-led delivery
-              </span>
-              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
-                Modern UI & motion
-              </span>
-              <span className="px-3 py-1 rounded-full bg-surface-container-lowest shadow-sm">
-                Built to scale
-              </span>
-            </div>
-          </div>
-          <div className="relative">
-            <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low anim-fade-in">
-              <Image
-                alt="Modern office team collaborating in a bright airy space"
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
-                fill
-                sizes="(min-width: 1024px) 520px, 100vw"
-                className="object-cover"
-                priority
-              />
-            </div>
-            <div className="absolute -bottom-10 right-10 bg-surface-container-lowest p-6 rounded-2xl shadow-xl flex items-center gap-4 anim-fade-up">
-              <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
-                <span className="material-symbols-outlined text-primary">
-                  trending_up
-                </span>
-              </div>
-              <div>
-                <p className="text-xs font-bold text-on-surface-variant font-label">
-                  Delivery
-                </p>
-                <p className="text-lg font-bold font-headline">Quality-first</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 

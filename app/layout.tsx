@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
+import HeaderNav from "./_components/HeaderNav";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -55,38 +56,7 @@ export default function RootLayout({
               </span>
               <span className="text-2xl">Blummify</span>
             </Link>
-            <nav className="hidden md:flex items-center space-x-8 font-headline font-medium text-sm tracking-tight">
-              <Link
-                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-                href="/"
-              >
-                Home
-              </Link>
-              <Link
-                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-                href="/about"
-              >
-                About
-              </Link>
-              <Link
-                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-                href="/services"
-              >
-                Services
-              </Link>
-              <Link
-                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-                href="/projects"
-              >
-                Projects
-              </Link>
-              <Link
-                className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-                href="/contact"
-              >
-                Contact
-              </Link>
-            </nav>
+            <HeaderNav />
             <Link
               href="/contact"
               className="bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
