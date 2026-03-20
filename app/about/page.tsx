@@ -44,7 +44,7 @@ export default function AboutPage() {
                   href="/projects"
                   className="bg-white/10 text-white px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 backdrop-blur hover:bg-white/15 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
                 >
-                  View projects
+                  View portfolio
                 </Link>
               </div>
             </div>
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   href="/projects"
                   className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
                 >
-                  Explore projects
+                  Explore portfolio
                 </Link>
               </div>
             </div>

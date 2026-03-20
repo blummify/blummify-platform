@@ -56,7 +56,7 @@ export default function HeroBanner() {
               href="/projects"
               className="bg-white/10 text-white px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 backdrop-blur hover:bg-white/15 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
             >
-              View Projects
+              View Portfolio
             </Link>
           </div>
         </div>

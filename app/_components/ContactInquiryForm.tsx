@@ -3,7 +3,7 @@
 import type { FormEvent } from "react";
 import { useCallback, useMemo, useState } from "react";
 
-const EMAIL = "hello@blummify.com";
+const EMAIL = "info@blummify.com";
 
 const projectTypes = [
   "Web development",

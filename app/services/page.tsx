@@ -181,7 +181,7 @@ export default function ServicesPage() {
                 href="/projects"
                 className="border border-white/20 text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-white hover:text-on-surface hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
               >
-                View projects
+                View portfolio
               </Link>
             </div>
           </div>

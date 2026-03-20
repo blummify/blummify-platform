@@ -51,10 +51,10 @@ export default function ContactPage() {
                     Email
                   </p>
                   <a
-                    href="mailto:hello@blummify.com"
+                    href="mailto:info@blummify.com"
                     className="mt-2 block text-lg font-headline font-bold text-primary hover:opacity-80 transition-opacity"
                   >
-                    hello@blummify.com
+                    info@blummify.com
                   </a>
                   <p className="mt-3 text-sm text-on-surface-variant font-body">
                     We typically reply within 1–2 business days.
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   we&apos;ll propose a clean path to delivery.
                 </p>
                 <a
-                  href="mailto:hello@blummify.com?subject=Project%20Inquiry"
+                  href="mailto:info@blummify.com?subject=Project%20Inquiry"
                   className="mt-8 inline-flex w-full justify-center bg-primary text-white px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-primary-container hover:text-on-primary-container hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
                 >
                   Email us

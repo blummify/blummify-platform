@@ -15,13 +15,13 @@ export default function ProjectsPage() {
                 <span className="material-symbols-outlined text-[18px]">
                   work
                 </span>
-                Projects
+                Portfolio
               </span>
               <h1
                 className="mt-6 text-4xl lg:text-6xl font-headline font-bold tracking-tight text-white anim-fade-up"
                 style={{ animationDelay: "90ms" }}
               >
-                Projects
+                Portfolio
               </h1>
               <p
                 className="mt-5 text-lg text-white/80 font-body leading-relaxed anim-fade-up"

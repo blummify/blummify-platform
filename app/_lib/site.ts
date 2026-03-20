@@ -9,5 +9,5 @@ export const organizationJsonLd = {
   url: siteUrl,
   description:
     "Software consulting focused on web, mobile, branding, and marketing—delivered with clarity and craft.",
-  email: "hello@blummify.com",
+  email: "info@blummify.com",
 } as const;

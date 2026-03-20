@@ -32,7 +32,7 @@ export default async function ProjectDetailPage({
                   href="/projects"
                   className="hover:text-white transition-colors"
                 >
-                  Projects
+                  Portfolio
                 </Link>
                 <span aria-hidden="true">/</span>
                 <span className="text-white">{project.name}</span>
@@ -133,9 +133,28 @@ export default async function ProjectDetailPage({
                   </div>
                 </div>
 
+                {project.liveUrl ? (
+                  <a
+                    href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-10 inline-flex w-full items-center justify-center gap-2 border-2 border-primary/30 bg-transparent px-6 py-3 rounded-full font-headline font-bold text-sm text-primary transition-all duration-300 hover:border-primary hover:bg-primary/5 hover:-translate-y-0.5 active:scale-[0.99]"
+                  >
+                    Visit live site
+                    <span
+                      className="material-symbols-outlined text-[1.125rem]"
+                      aria-hidden
+                    >
+                      open_in_new
+                    </span>
+                  </a>
+                ) : null}
+
                 <Link
                   href="/contact"
-                  className="mt-10 inline-flex w-full justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
+                  className={`inline-flex w-full justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99] ${
+                    project.liveUrl ? "mt-3" : "mt-10"
+                  }`}
                 >
                   Start a similar project
                 </Link>

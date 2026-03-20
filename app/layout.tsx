@@ -89,7 +89,7 @@ export default function RootLayout({
                 className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
                 href="/projects"
               >
-                Projects
+                Portfolio
               </Link>
               <Link
                 className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
@@ -104,7 +104,7 @@ export default function RootLayout({
                 Contact
               </Link>
             </div>
-            <div className="flex gap-4 mt-8 md:mt-0">
+            <div className="flex flex-wrap justify-center gap-4 mt-8 md:mt-0">
               <Link
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all"
                 href="/"
@@ -121,6 +121,42 @@ export default function RootLayout({
                   mail
                 </span>
               </Link>
+              <a
+                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
+                href="https://www.linkedin.com/company/blummify/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+              >
+                in
+              </a>
+              <a
+                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
+                href="https://www.instagram.com/blummify/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+              >
+                ig
+              </a>
+              <a
+                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
+                href="https://x.com/blummify"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="X"
+              >
+                x
+              </a>
+              <a
+                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
+                href="https://www.tiktok.com/@blummify"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="TikTok"
+              >
+                tt
+              </a>
             </div>
           </div>
         </footer>

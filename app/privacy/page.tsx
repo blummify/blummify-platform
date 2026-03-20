@@ -74,9 +74,9 @@ export default function PrivacyPage() {
             information we hold by emailing{" "}
             <a
               className="text-primary font-bold hover:opacity-80"
-              href="mailto:hello@blummify.com"
+              href="mailto:info@blummify.com"
             >
-              hello@blummify.com
+              info@blummify.com
             </a>
             .
           </p>

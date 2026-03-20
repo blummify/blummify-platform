@@ -151,7 +151,7 @@ function FeaturedProjects() {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div className="max-w-2xl">
             <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight">
-              Featured Projects
+              Featured Portfolio
             </h2>
             <p className="mt-4 text-on-surface-variant font-body">
               A quick look at recent work across product builds, relaunches, and
@@ -162,7 +162,7 @@ function FeaturedProjects() {
             href="/projects"
             className="inline-flex items-center gap-2 text-primary font-bold font-headline hover:gap-3 transition-all"
           >
-            View all projects{" "}
+            View full portfolio{" "}
             <span className="material-symbols-outlined">arrow_forward</span>
           </Link>
         </div>
@@ -315,7 +315,7 @@ function CTA() {
             className="border border-white/20 text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-white hover:text-on-surface hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
             href="/projects"
           >
-            View Projects
+            View Portfolio
           </Link>
         </div>
       </div>
