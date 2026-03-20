@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Blummify | Evolving with Intent",
   description:
     "Blummify is a software consulting company helping teams evolve through strategy, engineering, and data intelligence.",
+  icons: {
+    icon: "/icon.png",
+  },
 };
 
 export default function RootLayout({
