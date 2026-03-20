@@ -26,6 +26,12 @@ function TopNav() {
         </a>
         <div className="hidden md:flex items-center space-x-8 font-headline font-medium text-sm tracking-tight">
           <a
+            className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
+            href="#about"
+          >
+            About
+          </a>
+          <a
             className="text-[#7AD0A4] font-bold border-b-2 border-[#7AD0A4] pb-1"
             href="#services"
           >
@@ -33,21 +39,9 @@ function TopNav() {
           </a>
           <a
             className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-            href="#case-studies"
+            href="#contact"
           >
-            Case Studies
-          </a>
-          <a
-            className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-            href="#about"
-          >
-            About
-          </a>
-          <a
-            className="text-[#1B1C1D] hover:text-[#7AD0A4] transition-colors"
-            href="#insights"
-          >
-            Insights
+            Contact
           </a>
         </div>
         <a
@@ -237,23 +231,23 @@ function CoreSpecializations() {
     <section id="services" className="py-24 px-8 max-w-7xl mx-auto">
       <div className="text-center mb-20">
         <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight mb-4">
-          Core Specializations
+          Services
         </h2>
         <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-primary-fixed text-4xl">
-              cloud_done
+              language
             </span>
           </div>
           <h3 className="text-2xl font-headline font-bold mb-4">
-            Cloud Modernization
+            Web Development
           </h3>
           <p className="text-on-surface-variant font-body">
-            Legacy migration and native cloud architecture that scales with
-            zero friction.
+            Modern, high-performance websites and web apps built for growth and
+            maintainability.
           </p>
           <a
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
@@ -266,15 +260,15 @@ function CoreSpecializations() {
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-secondary-fixed text-4xl">
-              terminal
+              smartphone
             </span>
           </div>
           <h3 className="text-2xl font-headline font-bold mb-4">
-            Custom Engineering
+            Mobile Application Development
           </h3>
           <p className="text-on-surface-variant font-body">
-            Tailored software solutions built with modern stacks to give you a
-            lasting edge.
+            iOS and Android apps designed for reliability, performance, and a
+            polished user experience.
           </p>
           <a
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
@@ -287,15 +281,36 @@ function CoreSpecializations() {
         <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-tertiary-fixed text-4xl">
-              monitoring
+              palette
             </span>
           </div>
           <h3 className="text-2xl font-headline font-bold mb-4">
-            Data Intelligence
+            Branding Design
           </h3>
           <p className="text-on-surface-variant font-body">
-            Turning raw metrics into actionable narratives through AI and
-            advanced analytics.
+            Brand identity systems, UI kits, and visual direction that make your
+            product feel premium.
+          </p>
+          <a
+            className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
+            href="#contact"
+          >
+            Learn More{" "}
+            <span className="material-symbols-outlined">arrow_forward</span>
+          </a>
+        </div>
+        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
+          <div className="w-20 h-20 rounded-full bg-primary-container flex items-center justify-center mb-8">
+            <span className="material-symbols-outlined text-on-primary-container text-4xl">
+              campaign
+            </span>
+          </div>
+          <h3 className="text-2xl font-headline font-bold mb-4">
+            Digital Marketing
+          </h3>
+          <p className="text-on-surface-variant font-body">
+            Performance-focused campaigns and content that increase visibility
+            and qualified leads.
           </p>
           <a
             className="mt-6 text-primary font-bold flex items-center gap-2 hover:gap-4 transition-all"
