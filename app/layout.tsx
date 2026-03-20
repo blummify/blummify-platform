@@ -47,7 +47,7 @@ export default function RootLayout({
             >
               <span className="relative w-14 h-14 rounded-full bg-white overflow-hidden shadow-sm">
                 <Image
-                  src="/blummifly-logo.jpeg"
+                  src="/blummifly-logo.png"
                   alt="Blummify"
                   fill
                   sizes="56px"

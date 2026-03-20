@@ -68,9 +68,8 @@ export default function AboutPage() {
                       Our Mission
                     </h2>
                     <p className="mt-3 text-on-surface-variant font-body leading-relaxed">
-                      Help teams evolve with intent by shipping high-quality
-                      software, building strong brands, and creating systems
-                      that scale.
+                      To help businesses bloom online by creating and improving
+                      modern digital solutions that drive growth and impact.
                     </p>
                   </div>
                 </div>
@@ -88,8 +87,9 @@ export default function AboutPage() {
                       Our Vision
                     </h2>
                     <p className="mt-3 text-on-surface-variant font-body leading-relaxed">
-                      Be the consulting partner teams trust for modern delivery,
-                      clean design, and outcomes that hold up in the real world.
+                      To become a trusted global brand that empowers businesses
+                      to grow, innovate, and succeed through impactful
+                      solutions.
                     </p>
                   </div>
                 </div>
@@ -121,6 +121,140 @@ export default function AboutPage() {
                   quality={90}
                   className="object-cover"
                 />
+              </div>
+            </div>
+          </section>
+
+          <section className="mt-20">
+            <div className="max-w-3xl">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase font-label">
+                <span className="material-symbols-outlined text-[18px]">
+                  handshake
+                </span>
+                Core Values
+              </span>
+              <h2 className="mt-6 text-3xl lg:text-5xl font-headline font-bold tracking-tight text-on-surface">
+                The principles behind every project we ship.
+              </h2>
+              <p className="mt-4 text-on-surface-variant font-body leading-relaxed">
+                These values shape how we think, collaborate, and deliver
+                outcomes that help businesses grow.
+              </p>
+            </div>
+
+            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
+                    <span className="material-symbols-outlined text-primary">
+                      trending_up
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      1. Growth
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We are committed to helping businesses grow and reach
+                      their full potential.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
+                    <span className="material-symbols-outlined text-on-secondary-container">
+                      tune
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      2. Simplicity
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We believe in clean, simple, and effective solutions that
+                      deliver real results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
+                    <span className="material-symbols-outlined text-on-primary-container">
+                      auto_awesome
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      3. Innovation
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We embrace new ideas and continuously improve to create
+                      better solutions.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center">
+                    <span className="material-symbols-outlined text-on-tertiary-container">
+                      verified
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      4. Reliability
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We deliver on our promises and build solutions our clients
+                      can depend on.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
+                    <span className="material-symbols-outlined text-secondary">
+                      public
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      5. Impact
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We focus on creating solutions that make a meaningful
+                      difference for businesses.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
+                <div className="flex items-start gap-4">
+                  <span className="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center">
+                    <span className="material-symbols-outlined text-on-primary-fixed">
+                      groups
+                    </span>
+                  </span>
+                  <div>
+                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
+                      6. Collaboration
+                    </p>
+                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
+                      We work closely with our clients to understand their needs
+                      and bring their ideas to life.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </section>
