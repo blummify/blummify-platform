@@ -61,29 +61,30 @@ export default function ServicesPage() {
   return (
     <main className="pb-16">
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
-        <div className="absolute top-0 right-0 w-[44rem] h-[44rem] bg-primary/25 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
-        <div className="absolute bottom-0 left-0 w-[44rem] h-[44rem] bg-primary-container/20 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
+        <div className="absolute top-0 right-0 h-[44rem] w-[44rem] -translate-y-1/2 translate-x-1/2 rounded-full bg-primary/25 blur-[140px] anim-ambient" />
+        <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />
         <div className="relative z-10 px-8 py-10 lg:px-16 lg:py-12">
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase font-label backdrop-blur anim-fade-up">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 font-label text-xs font-bold uppercase tracking-wider text-white backdrop-blur anim-fade-up">
                 <span className="material-symbols-outlined text-[18px]">
                   widgets
                 </span>
-                Services
+                What we offer
               </span>
               <h1
-                className="mt-6 text-4xl lg:text-6xl font-headline font-bold tracking-tight text-white anim-fade-up"
+                className="mt-6 font-headline text-4xl font-bold tracking-tight text-white anim-fade-up lg:text-6xl"
                 style={{ animationDelay: "90ms" }}
               >
                 Services
               </h1>
               <p
-                className="mt-5 text-lg text-white/80 font-body leading-relaxed anim-fade-up"
+                className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                Clear offerings, clean execution, and measurable outcomes. Pick
-                a service below to see what we deliver and how we work.
+                Clear offerings, clean execution, and measurable outcomes.
+                Explore each service below to see what we deliver and how we
+                work with you.
               </p>
             </div>
           </div>

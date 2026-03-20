@@ -231,11 +231,6 @@ export default function ContactInquiryForm() {
         Send Message
       </button>
 
-      <p className="text-center text-xs text-on-surface-variant font-body">
-        Opens your email app with a pre-filled message to{" "}
-        <span className="font-semibold text-on-surface">{EMAIL}</span>.
-      </p>
-
       {submitted ? (
         <p className="text-sm text-primary text-center font-body">
           If your mail app didn&apos;t open, email us directly at {EMAIL}.
