@@ -1,32 +1,18 @@
 "use client";
 
 import type { FormEvent } from "react";
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useState } from "react";
 
 const EMAIL = "info@blummify.com";
 
-const projectTypes = [
-  "Web development",
-  "Mobile apps",
-  "Branding & design",
-  "Digital marketing",
-  "Something else",
-] as const;
-
-const budgets = [
-  "Not sure yet",
-  "Under $10k",
-  "$10k – $25k",
-  "$25k – $75k",
-  "$75k+",
-] as const;
-
-const timelines = [
-  "ASAP / urgent",
-  "Within 1 month",
-  "1–3 months",
-  "3+ months",
-  "Exploring options",
+const subjectOptions = [
+  { value: "", label: "Select an option" },
+  { value: "web", label: "Web development" },
+  { value: "mobile", label: "Mobile apps" },
+  { value: "branding", label: "Branding & design" },
+  { value: "marketing", label: "Digital marketing" },
+  { value: "general", label: "General inquiry" },
+  { value: "other", label: "Something else" },
 ] as const;
 
 function buildMailto(body: string, subject: string) {
@@ -37,44 +23,59 @@ function buildMailto(body: string, subject: string) {
   return `mailto:${EMAIL}?${params.toString()}`;
 }
 
+function subjectLabel(value: string) {
+  const found = subjectOptions.find((o) => o.value === value);
+  return found?.label ?? value;
+}
+
 export default function ContactInquiryForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
-  const [company, setCompany] = useState("");
-  const [projectType, setProjectType] = useState<string>(projectTypes[0]);
-  const [budget, setBudget] = useState<string>(budgets[0]);
-  const [timeline, setTimeline] = useState<string>(timelines[0]);
+  const [phone, setPhone] = useState("");
+  const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
+  const [consent, setConsent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const canSubmit = useMemo(
-    () => name.trim().length > 1 && email.includes("@"),
-    [name, email],
-  );
+  const messageOk = message.trim().length >= 20;
 
   const onSubmit = useCallback(
     (e: FormEvent) => {
       e.preventDefault();
       setError(null);
-      if (!canSubmit) {
-        setError("Please add your name and a valid email so we can reply.");
+      if (!name.trim() || name.trim().length < 2) {
+        setError("Please enter your full name.");
+        return;
+      }
+      if (!email.includes("@")) {
+        setError("Please enter a valid email address.");
+        return;
+      }
+      if (!subject) {
+        setError("Please select a subject.");
+        return;
+      }
+      if (!messageOk) {
+        setError("Please write at least 20 characters in your message.");
+        return;
+      }
+      if (!consent) {
+        setError("Please agree to receive communication so we can reply.");
         return;
       }
 
       const lines = [
         `Name: ${name.trim()}`,
         `Email: ${email.trim()}`,
-        `Company: ${company.trim() || "—"}`,
-        `Project type: ${projectType}`,
-        `Budget: ${budget}`,
-        `Timeline: ${timeline}`,
+        `Phone: ${phone.trim() || "—"}`,
+        `Subject: ${subjectLabel(subject)}`,
         "",
-        "Goals / context:",
-        message.trim() || "—",
+        "Message:",
+        message.trim(),
       ];
       const body = lines.join("\n");
-      const subject = `Project inquiry — ${projectType}`;
+      const mailSubject = `Blummify contact — ${subjectLabel(subject)}`;
 
       if (body.length > 1800) {
         setError(
@@ -83,26 +84,26 @@ export default function ContactInquiryForm() {
         return;
       }
 
-      window.location.href = buildMailto(body, subject);
+      window.location.href = buildMailto(body, mailSubject);
       setSubmitted(true);
     },
-    [budget, canSubmit, company, email, message, name, projectType, timeline],
+    [consent, email, message, messageOk, name, phone, subject],
   );
 
   return (
     <form
       id="inquiry"
       onSubmit={onSubmit}
-      className="mt-8 space-y-6"
+      className="mt-8 space-y-5"
       noValidate
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label
             htmlFor="inquiry-name"
-            className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
+            className="block text-sm font-semibold text-on-surface font-headline"
           >
-            Name <span className="text-primary">*</span>
+            Full Name
           </label>
           <input
             id="inquiry-name"
@@ -111,16 +112,17 @@ export default function ContactInquiryForm() {
             autoComplete="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            placeholder="John Doe"
             required
-            className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="mt-2 w-full rounded-2xl border border-outline-variant/50 bg-surface-bright px-4 py-3.5 text-on-surface font-body outline-none transition-shadow placeholder:text-on-surface-variant/50 focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25"
           />
         </div>
         <div>
           <label
             htmlFor="inquiry-email"
-            className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
+            className="block text-sm font-semibold text-on-surface font-headline"
           >
-            Email <span className="text-primary">*</span>
+            Email Address
           </label>
           <input
             id="inquiry-email"
@@ -129,90 +131,51 @@ export default function ContactInquiryForm() {
             autoComplete="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="john@example.com"
             required
-            className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            className="mt-2 w-full rounded-2xl border border-outline-variant/50 bg-surface-bright px-4 py-3.5 text-on-surface font-body outline-none transition-shadow placeholder:text-on-surface-variant/50 focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25"
           />
         </div>
       </div>
 
-      <div>
-        <label
-          htmlFor="inquiry-company"
-          className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
-        >
-          Company / team
-        </label>
-        <input
-          id="inquiry-company"
-          name="company"
-          type="text"
-          autoComplete="organization"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
-          className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-        />
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label
-            htmlFor="inquiry-type"
-            className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
+            htmlFor="inquiry-phone"
+            className="block text-sm font-semibold text-on-surface font-headline"
           >
-            Project type
+            Phone Number{" "}
+            <span className="font-normal text-on-surface-variant">(Optional)</span>
           </label>
-          <select
-            id="inquiry-type"
-            name="projectType"
-            value={projectType}
-            onChange={(e) => setProjectType(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            {projectTypes.map((t) => (
-              <option key={t} value={t}>
-                {t}
-              </option>
-            ))}
-          </select>
+          <input
+            id="inquiry-phone"
+            name="phone"
+            type="tel"
+            autoComplete="tel"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            placeholder="+1 (555) 000-0000"
+            className="mt-2 w-full rounded-2xl border border-outline-variant/50 bg-surface-bright px-4 py-3.5 text-on-surface font-body outline-none transition-shadow placeholder:text-on-surface-variant/50 focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25"
+          />
         </div>
         <div>
           <label
-            htmlFor="inquiry-budget"
-            className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
+            htmlFor="inquiry-subject"
+            className="block text-sm font-semibold text-on-surface font-headline"
           >
-            Budget range
+            Subject
           </label>
           <select
-            id="inquiry-budget"
-            name="budget"
-            value={budget}
-            onChange={(e) => setBudget(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+            id="inquiry-subject"
+            name="subject"
+            value={subject}
+            onChange={(e) => setSubject(e.target.value)}
+            required
+            className="mt-2 w-full rounded-2xl border border-outline-variant/50 bg-surface-bright px-4 py-3.5 text-on-surface font-body outline-none transition-shadow focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25"
           >
-            {budgets.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div>
-          <label
-            htmlFor="inquiry-timeline"
-            className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
-          >
-            Timeline
-          </label>
-          <select
-            id="inquiry-timeline"
-            name="timeline"
-            value={timeline}
-            onChange={(e) => setTimeline(e.target.value)}
-            className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-          >
-            {timelines.map((t) => (
-              <option key={t} value={t}>
-                {t}
+            {subjectOptions.map((o) => (
+              <option key={o.value || "placeholder"} value={o.value} disabled={o.value === ""}>
+                {o.label}
               </option>
             ))}
           </select>
@@ -222,9 +185,9 @@ export default function ContactInquiryForm() {
       <div>
         <label
           htmlFor="inquiry-message"
-          className="block text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label"
+          className="block text-sm font-semibold text-on-surface font-headline"
         >
-          What are you building—and what does success look like?
+          Message
         </label>
         <textarea
           id="inquiry-message"
@@ -232,10 +195,25 @@ export default function ContactInquiryForm() {
           rows={5}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          placeholder="Links, constraints, stakeholders, and any deadlines help us respond faster."
-          className="mt-2 w-full rounded-2xl border border-outline-variant/60 bg-white px-4 py-3 text-on-surface font-body outline-none transition-shadow focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 resize-y min-h-[120px]"
+          placeholder="Tell us about your project or question..."
+          className="mt-2 w-full min-h-[140px] resize-y rounded-2xl border border-outline-variant/50 bg-surface-bright px-4 py-3.5 text-on-surface font-body outline-none transition-shadow placeholder:text-on-surface-variant/50 focus-visible:border-primary/40 focus-visible:ring-2 focus-visible:ring-primary/25"
         />
+        <p className="mt-1.5 text-xs text-on-surface-variant font-body">
+          Minimum 20 characters
+        </p>
       </div>
+
+      <label className="flex cursor-pointer items-start gap-3 rounded-2xl border border-transparent p-1 transition-colors hover:bg-surface-container-low/50">
+        <input
+          type="checkbox"
+          checked={consent}
+          onChange={(e) => setConsent(e.target.checked)}
+          className="mt-1 h-4 w-4 shrink-0 rounded border-outline-variant text-primary focus:ring-primary"
+        />
+        <span className="text-sm leading-relaxed text-on-surface-variant font-body">
+          I agree to receive communication from Blummify regarding my inquiry.
+        </span>
+      </label>
 
       {error ? (
         <p className="text-sm text-error font-body" role="alert">
@@ -243,22 +221,23 @@ export default function ContactInquiryForm() {
         </p>
       ) : null}
 
-      <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-        <button
-          type="submit"
-          className="inline-flex justify-center bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-50"
-          disabled={!canSubmit}
-        >
-          Open email with brief
-        </button>
-        <p className="text-sm text-on-surface-variant font-body">
-          This opens your email app with a pre-filled message to{" "}
-          <span className="font-bold text-on-surface">{EMAIL}</span>.
-        </p>
-      </div>
+      <button
+        type="submit"
+        className="inline-flex w-full items-center justify-center gap-2 bg-signature-gradient px-8 py-4 rounded-2xl font-headline font-bold text-base text-on-primary shadow-md shadow-primary/15 transition-all duration-300 hover:opacity-[0.97] hover:shadow-lg active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
+      >
+        <span className="material-symbols-outlined text-[22px]" aria-hidden>
+          send
+        </span>
+        Send Message
+      </button>
+
+      <p className="text-center text-xs text-on-surface-variant font-body">
+        Opens your email app with a pre-filled message to{" "}
+        <span className="font-semibold text-on-surface">{EMAIL}</span>.
+      </p>
 
       {submitted ? (
-        <p className="text-sm text-primary font-body">
+        <p className="text-sm text-primary text-center font-body">
           If your mail app didn&apos;t open, email us directly at {EMAIL}.
         </p>
       ) : null}

@@ -1,6 +1,11 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 
 import { projects } from "./_data";
+
+export const metadata: Metadata = {
+  title: "Portfolio",
+};
 
 export default function ProjectsPage() {
   return (

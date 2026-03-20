@@ -18,7 +18,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Blummify | Evolving with Intent",
+  title: {
+    default: "Where Ideas Bloom into Digital Success | Blummify",
+    template: "%s | Blummify",
+  },
   description:
     "Blummify is a software consulting company helping teams evolve through strategy, engineering, and data intelligence.",
   icons: {
@@ -105,27 +108,18 @@ export default function RootLayout({
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-4 mt-8 md:mt-0">
-              <Link
+              <a
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all"
-                href="/"
-                aria-label="Home"
+                href="mailto:info@blummify.com"
+                aria-label="Email Blummify"
               >
-                <span className="material-symbols-outlined text-sm">home</span>
-              </Link>
-              <Link
-                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all"
-                href="/contact"
-                aria-label="Contact"
-              >
-                <span className="material-symbols-outlined text-sm">
-                  mail
-                </span>
-              </Link>
+                <span className="material-symbols-outlined text-sm">mail</span>
+              </a>
               <a
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
                 href="https://www.linkedin.com/company/blummify/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="LinkedIn"
               >
                 in
@@ -134,7 +128,7 @@ export default function RootLayout({
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
                 href="https://www.instagram.com/blummify/"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
               >
                 ig
@@ -143,16 +137,25 @@ export default function RootLayout({
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
                 href="https://x.com/blummify"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="X"
               >
                 x
               </a>
               <a
                 className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
+                href="https://wa.me/233206626569"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="WhatsApp"
+              >
+                wa
+              </a>
+              <a
+                className="w-8 h-8 rounded-full bg-white flex items-center justify-center text-on-surface cursor-pointer hover:bg-primary hover:text-white transition-all font-headline font-bold text-xs"
                 href="https://www.tiktok.com/@blummify"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 aria-label="TikTok"
               >
                 tt

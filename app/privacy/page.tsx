@@ -4,7 +4,7 @@ import Link from "next/link";
 import { siteUrl } from "../_lib/site";
 
 export const metadata: Metadata = {
-  title: "Privacy | Blummify",
+  title: "Privacy Policy",
   description:
     "How Blummify handles information you share through this website and project inquiries.",
   alternates: { canonical: `${siteUrl}/privacy` },

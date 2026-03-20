@@ -1,8 +1,13 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
 import { projects } from "./projects/_data";
 import HeroBanner from "./_components/HeroBanner";
+
+export const metadata: Metadata = {
+  title: "Where Ideas Bloom into Digital Success",
+};
 
 export default function Home() {
   return (
