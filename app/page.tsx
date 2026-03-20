@@ -8,117 +8,11 @@ export default function Home() {
   return (
     <main>
       <HeroBanner />
-      <IntentBento />
       <CoreSpecializations />
       <FeaturedProjects />
       <Testimonials />
       <CTA />
     </main>
-  );
-}
-
-function IntentBento() {
-  return (
-    <section id="method" className="bg-surface-container-low py-24 px-8">
-      <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
-          <div className="max-w-2xl">
-            <h2 className="text-4xl lg:text-5xl font-headline font-bold tracking-tight mb-6">
-              Evolving with Intent
-            </h2>
-            <p className="text-on-surface-variant font-body">
-              Strategy isn&apos;t a static document; it&apos;s a living organism.
-              We build systems that don&apos;t just solve today&apos;s problems
-              but adapt to tomorrow&apos;s opportunities.
-            </p>
-          </div>
-          <span className="font-headline font-bold text-8xl text-outline-variant/20 hidden lg:block">
-            01
-          </span>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <div className="max-w-md">
-              <span className="material-symbols-outlined text-primary text-4xl mb-6">
-                psychology
-              </span>
-              <h3 className="text-2xl font-headline font-bold mb-4">
-                Strategic Architecture
-              </h3>
-              <p className="text-on-surface-variant mb-8">
-                We map the digital DNA of your organization to ensure every
-                technological leap is grounded in purpose and measurable ROI.
-              </p>
-            </div>
-            <div className="h-48 w-full bg-surface-container-low rounded-xl overflow-hidden">
-              <div className="relative w-full h-full">
-                <Image
-                  alt="Abstract data visualization with clean green lines"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw"
-                  fill
-                  sizes="(min-width: 768px) 640px, 100vw"
-                  quality={90}
-                  className="object-cover grayscale transition-all duration-700 hover:grayscale-0"
-                />
-              </div>
-            </div>
-          </div>
-          <div className="md:col-span-4 bg-signature-gradient p-10 rounded-[2rem] text-on-primary flex flex-col justify-center items-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <span
-              className="material-symbols-outlined text-6xl mb-6"
-              style={{
-                fontVariationSettings:
-                  '"FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24',
-              }}
-            >
-              eco
-            </span>
-            <h3 className="text-2xl font-headline font-bold mb-4">
-              Sustainable Growth
-            </h3>
-            <p className="opacity-90">
-              Building digital foundations that prioritize longevity over
-              quick-fixes.
-            </p>
-          </div>
-          <div className="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <span className="material-symbols-outlined text-primary text-4xl mb-6">
-              hub
-            </span>
-            <h3 className="text-2xl font-headline font-bold mb-4">
-              Interconnected Systems
-            </h3>
-            <p className="text-on-surface-variant">
-              Breaking silos through unified data streams and seamless API
-              integrations.
-            </p>
-          </div>
-          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
-            <div className="flex-1">
-              <h3 className="text-2xl font-headline font-bold mb-4">
-                Continuous Adaptation
-              </h3>
-              <p className="text-on-surface-variant">
-                Our agile methodology ensures your software evolves at the
-                speed of your market.
-              </p>
-            </div>
-            <div className="w-full md:w-1/3 aspect-square bg-secondary-fixed rounded-2xl overflow-hidden">
-              <div className="relative w-full h-full">
-                <Image
-                  alt="Close up of hands working on a sleek laptop"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw"
-                  fill
-                  sizes="(min-width: 768px) 240px, 100vw"
-                  quality={90}
-                  className="object-cover"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
   );
 }
 

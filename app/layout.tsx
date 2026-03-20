@@ -45,12 +45,12 @@ export default function RootLayout({
               className="flex items-center font-headline font-bold text-[#1B1C1D] tracking-tighter transition-transform duration-300 hover:-translate-y-0.5"
               aria-label="Blummify Home"
             >
-              <span className="relative w-12 h-12 rounded-full bg-white overflow-hidden shadow-sm">
+              <span className="relative w-14 h-14 rounded-full bg-white overflow-hidden shadow-sm">
                 <Image
                   src="/blummifly-logo.jpeg"
                   alt="Blummify"
                   fill
-                  sizes="48px"
+                  sizes="56px"
                   className="object-cover"
                   priority
                 />
@@ -59,7 +59,7 @@ export default function RootLayout({
             <HeaderNav />
             <Link
               href="/contact"
-              className="bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
+              className="hidden md:inline-flex bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
             >
               Get Started
             </Link>
