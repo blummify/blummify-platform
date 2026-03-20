@@ -10,48 +10,31 @@ export default function AboutPage() {
   return (
     <main className="pb-16">
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
-        <div className="absolute top-0 right-0 w-[44rem] h-[44rem] bg-primary/25 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
-        <div className="absolute bottom-0 left-0 w-[44rem] h-[44rem] bg-primary-container/20 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
+        <div className="absolute top-0 right-0 h-[44rem] w-[44rem] -translate-y-1/2 translate-x-1/2 rounded-full bg-primary/25 blur-[140px] anim-ambient" />
+        <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />
         <div className="relative z-10 px-8 py-10 lg:px-16 lg:py-12">
-          <div className="max-w-7xl mx-auto">
+          <div className="mx-auto max-w-7xl">
             <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase font-label backdrop-blur anim-fade-up">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 font-label text-xs font-bold uppercase tracking-wider text-white backdrop-blur anim-fade-up">
                 <span className="material-symbols-outlined text-[18px]">
-                  lightbulb
+                  groups
                 </span>
-                About
+                Who we are
               </span>
               <h1
-                className="mt-6 text-4xl lg:text-6xl font-headline font-bold tracking-tight text-white anim-fade-up"
+                className="mt-6 font-headline text-4xl font-bold tracking-tight text-white anim-fade-up lg:text-6xl"
                 style={{ animationDelay: "90ms" }}
               >
-                Driven by people. Defined by results.
+                About Blummify
               </h1>
               <p
-                className="mt-5 text-lg text-white/80 font-body leading-relaxed anim-fade-up"
+                className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                Blummify helps teams ship modern web and mobile products with a
-                brand that feels premium and a delivery process that stays
-                dependable.
+                We&apos;re a software consulting studio pairing thoughtful design
+                with dependable engineering—so your team can ship web and mobile
+                products, brand experiences, and growth work with confidence.
               </p>
-              <div
-                className="mt-8 flex flex-wrap gap-4 anim-fade-up"
-                style={{ animationDelay: "220ms" }}
-              >
-                <Link
-                  href="/contact"
-                  className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
-                >
-                  Talk to us
-                </Link>
-                <Link
-                  href="/projects"
-                  className="bg-white/10 text-white px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 backdrop-blur hover:bg-white/15 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
-                >
-                  View portfolio
-                </Link>
-              </div>
             </div>
           </div>
         </div>

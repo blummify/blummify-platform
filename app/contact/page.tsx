@@ -39,13 +39,13 @@ export default function ContactPage() {
                 <span className="material-symbols-outlined text-[18px]">
                   forum
                 </span>
-                Contact
+                Get in touch
               </span>
               <h1
                 className="mt-6 font-headline text-4xl font-bold tracking-tight text-white anim-fade-up lg:text-6xl"
                 style={{ animationDelay: "90ms" }}
               >
-                Contact
+                Contact us
               </h1>
               <p
                 className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
