@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState, useSyncExternalStore } from "react";
@@ -84,7 +85,7 @@ export default function HeaderNav() {
           aria-label="Open menu"
           aria-expanded={isOpen}
           onClick={() => setIsOpen(true)}
-          className="w-11 h-11 rounded-full bg-white/90 backdrop-blur-md shadow-sm flex items-center justify-center text-on-surface transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg active:scale-95"
+          className="flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-on-surface shadow-sm ring-1 ring-black/[0.04] backdrop-blur-md transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md active:scale-[0.97] motion-reduce:hover:translate-y-0 motion-reduce:transition-none"
         >
           <span className="material-symbols-outlined text-[22px]">menu</span>
         </button>
@@ -99,7 +100,7 @@ export default function HeaderNav() {
             aria-hidden={!isOpen}
           >
             <div
-              className={`absolute inset-0 bg-black/40 transition-opacity duration-300 ${
+              className={`absolute inset-0 bg-[#1b1c1d]/35 backdrop-blur-[8px] transition-[opacity,backdrop-filter] duration-500 ease-out motion-reduce:duration-200 ${
                 isOpen ? "opacity-100" : "opacity-0"
               }`}
               onClick={() => setIsOpen(false)}
@@ -109,18 +110,33 @@ export default function HeaderNav() {
               role="dialog"
               aria-modal="true"
               aria-label="Main menu"
-              className={`absolute top-0 right-0 flex h-full min-h-dvh w-[86vw] max-w-sm flex-col bg-white shadow-2xl transition-transform duration-300 ${
+              className={`absolute top-0 right-0 flex h-full min-h-dvh w-[min(86vw,20rem)] flex-col rounded-l-[1.75rem] border-l border-white/60 bg-surface-bright/95 shadow-[-28px_0_90px_rgba(27,28,29,0.14)] ring-1 ring-black/[0.03] backdrop-blur-xl transition-transform duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] motion-reduce:duration-200 motion-reduce:ease-out ${
                 isOpen ? "translate-x-0" : "translate-x-full"
               }`}
             >
-              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto p-6">
-                <div className="flex shrink-0 items-center justify-between">
-                  <p className="font-headline font-bold text-on-surface">Menu</p>
+              <div className="flex min-h-0 flex-1 flex-col overflow-y-auto overscroll-y-contain px-5 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-[max(1.25rem,calc(env(safe-area-inset-top)+0.5rem))]">
+                <div className="flex shrink-0 items-center justify-between gap-4">
+                  <Link
+                    href="/"
+                    onClick={() => setIsOpen(false)}
+                    className="flex items-center transition-transform duration-300 hover:-translate-y-0.5 motion-reduce:hover:translate-y-0"
+                    aria-label="Blummify Home"
+                  >
+                    <span className="relative h-25 w-25 overflow-hidden">
+                      <Image
+                        src="/blummifly-logo.png"
+                        alt="Blummify"
+                        fill
+                        sizes="140px"
+                        className="object-contain object-left"
+                      />
+                    </span>
+                  </Link>
                   <button
                     type="button"
                     aria-label="Close menu"
                     onClick={() => setIsOpen(false)}
-                    className="w-10 h-10 rounded-full bg-surface-container flex items-center justify-center text-on-surface transition-all duration-300 active:scale-95"
+                    className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-on-surface-variant transition-colors hover:bg-surface-container-low hover:text-on-surface active:scale-95 motion-reduce:active:scale-100"
                   >
                     <span className="material-symbols-outlined text-[22px]">
                       close
@@ -128,7 +144,10 @@ export default function HeaderNav() {
                   </button>
                 </div>
 
-                <div className="mt-6 flex flex-col gap-2">
+                <nav
+                  className="mt-8 flex flex-col gap-0.5"
+                  aria-label="Primary"
+                >
                   {navItems.map((item) => {
                     const isActive = isActivePath(pathname, item);
                     return (
@@ -137,25 +156,45 @@ export default function HeaderNav() {
                         href={item.href}
                         aria-current={isActive ? "page" : undefined}
                         onClick={() => setIsOpen(false)}
-                        className={`px-4 py-3 rounded-2xl font-headline font-bold transition-all ${
+                        className={`group flex items-center justify-between gap-3 rounded-xl px-3 py-3.5 font-headline text-[0.9375rem] font-medium tracking-tight transition-colors motion-reduce:transition-none ${
                           isActive
-                            ? "bg-secondary-container text-on-secondary-container"
-                            : "bg-surface-container-lowest text-on-surface hover:bg-surface-container"
+                            ? "bg-white text-primary shadow-sm ring-1 ring-black/[0.04]"
+                            : "text-on-surface hover:bg-white/70 hover:text-on-surface"
                         }`}
                       >
-                        {item.label}
+                        <span className={isActive ? "font-semibold" : ""}>
+                          {item.label}
+                        </span>
+                        <span
+                          className={`material-symbols-outlined text-[1.125rem] transition-transform duration-300 motion-reduce:transition-none ${
+                            isActive
+                              ? "text-primary translate-x-0"
+                              : "text-on-surface-variant/35 group-hover:translate-x-0.5 group-hover:text-primary/70"
+                          }`}
+                          aria-hidden
+                        >
+                          chevron_right
+                        </span>
                       </Link>
                     );
                   })}
-                </div>
+                </nav>
 
-                <Link
-                  href="/contact"
-                  onClick={() => setIsOpen(false)}
-                  className="mt-8 inline-flex w-full shrink-0 justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 active:scale-[0.99]"
-                >
-                  Get Started
-                </Link>
+                <div className="mt-auto shrink-0 border-t border-outline-variant/25 pt-6">
+                  <Link
+                    href="/contact"
+                    onClick={() => setIsOpen(false)}
+                    className="flex w-full items-center justify-center gap-2 rounded-2xl bg-signature-gradient py-3.5 font-headline text-sm font-bold text-on-primary shadow-md shadow-primary/20 transition-[transform,box-shadow,opacity] duration-300 hover:opacity-[0.97] hover:shadow-lg active:scale-[0.99] motion-reduce:hover:shadow-md motion-reduce:active:scale-100"
+                  >
+                    Get Started
+                    <span
+                      className="material-symbols-outlined text-[1.125rem]"
+                      aria-hidden
+                    >
+                      arrow_forward
+                    </span>
+                  </Link>
+                </div>
               </div>
             </div>
           </div>,

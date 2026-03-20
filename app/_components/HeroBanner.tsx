@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function HeroBanner() {
   return (
-    <section className="relative overflow-hidden min-h-[520px] lg:min-h-[640px]">
+    <section className="relative overflow-hidden min-h-[calc(100dvh-112px)]">
       <div className="absolute inset-0">
         <Image
           src="https://images.unsplash.com/photo-1653566031535-bcf33e1c2893?auto=format&fit=crop&w=2400&q=90"
@@ -26,20 +26,20 @@ export default function HeroBanner() {
             style={{ animationDelay: "40ms" }}
           >
             <span className="material-symbols-outlined text-[18px]">eco</span>
-            Innovation in Bloom
+            Bloom
           </span>
           <h1
             className="mt-6 text-5xl lg:text-7xl font-headline font-bold text-white leading-[1.05] tracking-tighter anim-fade-up"
             style={{ animationDelay: "120ms" }}
           >
-            Evolve your product with clarity, craft, and speed.
+            Where Ideas Bloom into digital success
           </h1>
           <p
             className="mt-6 text-lg lg:text-xl text-white/80 leading-relaxed font-body anim-fade-up"
             style={{ animationDelay: "200ms" }}
           >
-            Blummify is a software consulting company focused on helping teams
-            evolve through web, mobile, branding, and marketing.
+            Whether you&apos;re starting from scratch or looking to upgrade your
+            existing platform, we&apos;ve got you covered
           </p>
 
           <div
