@@ -19,7 +19,7 @@ function TopNav() {
       <div className="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
         <a
           href="#top"
-          className="text-2xl font-bold text-[#1B1C1D] tracking-tighter font-headline"
+          className="text-2xl font-bold text-[#1B1C1D] tracking-tighter font-headline transition-transform duration-300 hover:-translate-y-0.5"
         >
           Blummify
         </a>
@@ -51,7 +51,7 @@ function TopNav() {
         </div>
         <a
           href="#contact"
-          className="bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm hover:opacity-80 transition-all duration-300 active:scale-95"
+          className="bg-signature-gradient text-on-primary px-6 py-2.5 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-90 hover:-translate-y-0.5 hover:shadow-xl active:scale-95"
         >
           Get Started
         </a>
@@ -68,44 +68,56 @@ function Hero() {
     >
       <div className="grid lg:grid-cols-2 gap-16 items-center">
         <div className="z-10">
-          <span className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase mb-6 font-label">
+          <span
+            className="inline-block px-4 py-1.5 rounded-full bg-secondary-container text-on-secondary-container text-xs font-bold tracking-wider uppercase mb-6 font-label anim-fade-up"
+            style={{ animationDelay: "40ms" }}
+          >
             Innovation in Bloom
           </span>
-          <h1 className="text-5xl lg:text-7xl font-headline font-bold text-on-surface leading-[1.1] tracking-tighter mb-8">
+          <h1
+            className="text-5xl lg:text-7xl font-headline font-bold text-on-surface leading-[1.1] tracking-tighter mb-8 anim-fade-up"
+            style={{ animationDelay: "120ms" }}
+          >
             The Digital <span className="text-primary">Greenhouse</span> for
             Business.
           </h1>
-          <p className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-body">
+          <p
+            className="text-lg lg:text-xl text-on-surface-variant leading-relaxed mb-10 max-w-lg font-body anim-fade-up"
+            style={{ animationDelay: "200ms" }}
+          >
             Blummify is a software consulting company focused on helping teams
             evolve and succeed through strategy, engineering, and data-driven
             decisions.
           </p>
-          <div className="flex flex-wrap gap-4">
+          <div
+            className="flex flex-wrap gap-4 anim-fade-up"
+            style={{ animationDelay: "280ms" }}
+          >
             <a
               href="#contact"
-              className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base hover:opacity-90 transition-all shadow-lg"
+              className="bg-signature-gradient text-on-primary px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 shadow-lg hover:opacity-95 hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
             >
               Start Your Evolution
             </a>
             <a
               href="#method"
-              className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base hover:bg-surface-container-high transition-all"
+              className="bg-surface-container-highest text-on-surface px-8 py-4 rounded-full font-headline font-bold text-base transition-all duration-300 hover:bg-surface-container-high hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
             >
               View Our Method
             </a>
           </div>
         </div>
         <div className="relative">
-          <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low">
+          <div className="aspect-square rounded-[3rem] overflow-hidden bg-surface-container-low anim-fade-in">
             <img
               className="w-full h-full object-cover"
               alt="Modern office team collaborating in a bright airy space"
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
             />
           </div>
-          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-container/40 rounded-full blur-3xl" />
-          <div className="absolute top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-[100px]" />
-          <div className="absolute -bottom-10 right-10 bg-surface-container-lowest p-6 rounded-2xl shadow-xl flex items-center gap-4">
+          <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-primary-container/40 rounded-full blur-3xl anim-float" />
+          <div className="absolute top-10 -right-10 w-64 h-64 bg-secondary-container/30 rounded-full blur-[100px] anim-ambient" />
+          <div className="absolute -bottom-10 right-10 bg-surface-container-lowest p-6 rounded-2xl shadow-xl flex items-center gap-4 anim-fade-up">
             <div className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
               <span className="material-symbols-outlined text-primary">
                 trending_up
@@ -144,7 +156,7 @@ function IntentBento() {
           </span>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col justify-between group hover:shadow-xl transition-all duration-500">
+          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col justify-between group transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
             <div className="max-w-md">
               <span className="material-symbols-outlined text-primary text-4xl mb-6">
                 psychology
@@ -165,7 +177,7 @@ function IntentBento() {
               />
             </div>
           </div>
-          <div className="md:col-span-4 bg-signature-gradient p-10 rounded-[2rem] text-on-primary flex flex-col justify-center items-center text-center">
+          <div className="md:col-span-4 bg-signature-gradient p-10 rounded-[2rem] text-on-primary flex flex-col justify-center items-center text-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
             <span
               className="material-symbols-outlined text-6xl mb-6"
               style={{
@@ -183,7 +195,7 @@ function IntentBento() {
               quick-fixes.
             </p>
           </div>
-          <div className="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2rem] hover:shadow-xl transition-all duration-500">
+          <div className="md:col-span-4 bg-surface-container-lowest p-10 rounded-[2rem] transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
             <span className="material-symbols-outlined text-primary text-4xl mb-6">
               hub
             </span>
@@ -195,7 +207,7 @@ function IntentBento() {
               integrations.
             </p>
           </div>
-          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center hover:shadow-xl transition-all duration-500">
+          <div className="md:col-span-8 bg-surface-container-lowest p-10 rounded-[2rem] flex flex-col md:flex-row gap-8 items-center transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl">
             <div className="flex-1">
               <h3 className="text-2xl font-headline font-bold mb-4">
                 Continuous Adaptation
@@ -229,7 +241,7 @@ function CoreSpecializations() {
         <div className="w-24 h-2 bg-primary mx-auto rounded-full" />
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl hover:bg-surface-container transition-colors duration-300">
+        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-primary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-primary-fixed text-4xl">
               cloud_done
@@ -250,7 +262,7 @@ function CoreSpecializations() {
             <span className="material-symbols-outlined">arrow_forward</span>
           </a>
         </div>
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl hover:bg-surface-container transition-colors duration-300">
+        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-secondary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-secondary-fixed text-4xl">
               terminal
@@ -271,7 +283,7 @@ function CoreSpecializations() {
             <span className="material-symbols-outlined">arrow_forward</span>
           </a>
         </div>
-        <div className="flex flex-col items-center text-center p-8 rounded-3xl hover:bg-surface-container transition-colors duration-300">
+        <div className="flex flex-col items-center text-center p-8 rounded-3xl transition-all duration-500 hover:bg-surface-container hover:-translate-y-1 hover:shadow-xl">
           <div className="w-20 h-20 rounded-full bg-tertiary-fixed flex items-center justify-center mb-8">
             <span className="material-symbols-outlined text-on-tertiary-fixed text-4xl">
               monitoring
@@ -301,8 +313,8 @@ function CTA() {
   return (
     <section id="contact" className="mx-8 mb-24">
       <div className="max-w-7xl mx-auto bg-on-surface rounded-[3rem] p-12 lg:p-24 text-center overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2" />
-        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2" />
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 blur-[120px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-container/10 blur-[100px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
         <h2 className="text-4xl lg:text-6xl font-headline font-bold text-white mb-8 relative z-10 leading-tight">
           Ready to nurture your <br className="hidden md:block" />
           next big idea?
@@ -313,13 +325,13 @@ function CTA() {
         </p>
         <div className="flex flex-wrap justify-center gap-4 relative z-10">
           <a
-            className="bg-primary text-white px-10 py-5 rounded-full font-headline font-bold text-lg hover:bg-primary-container hover:text-on-primary-container transition-all"
+            className="bg-primary text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-primary-container hover:text-on-primary-container hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
             href="mailto:hello@blummify.com"
           >
             Schedule a Strategy Call
           </a>
           <a
-            className="border border-white/20 text-white px-10 py-5 rounded-full font-headline font-bold text-lg hover:bg-white hover:text-on-surface transition-all"
+            className="border border-white/20 text-white px-10 py-5 rounded-full font-headline font-bold text-lg transition-all duration-300 hover:bg-white hover:text-on-surface hover:-translate-y-0.5 hover:shadow-2xl active:scale-[0.99]"
             href="#case-studies"
           >
             Our Case Studies

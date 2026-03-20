@@ -72,6 +72,16 @@ body {
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
 }
 
+.motion-safe-only {
+  display: contents;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-only {
+    display: none;
+  }
+}
+
 .font-headline {
   font-family: var(--font-headline), ui-sans-serif, system-ui, sans-serif;
 }
@@ -90,4 +100,74 @@ body {
 
 .bg-signature-gradient {
   background: linear-gradient(135deg, #026c48 0%, #7ad0a4 100%);
+}
+
+@keyframes blummify-fade-up {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 16px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes blummify-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes blummify-float {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -10px, 0);
+  }
+}
+
+@keyframes blummify-ambient {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(10px, -6px, 0) scale(1.03);
+  }
+}
+
+.anim-fade-up {
+  opacity: 0;
+  transform: translate3d(0, 16px, 0);
+  animation: blummify-fade-up 800ms cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+.anim-fade-in {
+  opacity: 0;
+  animation: blummify-fade-in 700ms ease-out forwards;
+}
+
+.anim-float {
+  animation: blummify-float 6.5s ease-in-out infinite;
+}
+
+.anim-ambient {
+  animation: blummify-ambient 10s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-fade-up,
+  .anim-fade-in,
+  .anim-float,
+  .anim-ambient {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
 }
