@@ -28,10 +28,6 @@ export default function HeaderNav() {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  useEffect(() => {
     if (!isOpen) return;
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = "hidden";
@@ -126,6 +122,7 @@ export default function HeaderNav() {
                     key={item.href}
                     href={item.href}
                     aria-current={isActive ? "page" : undefined}
+                    onClick={() => setIsOpen(false)}
                     className={`px-4 py-3 rounded-2xl font-headline font-bold transition-all ${
                       isActive
                         ? "bg-secondary-container text-on-secondary-container"
@@ -140,6 +137,7 @@ export default function HeaderNav() {
 
             <Link
               href="/contact"
+              onClick={() => setIsOpen(false)}
               className="mt-8 inline-flex w-full justify-center bg-signature-gradient text-on-primary px-6 py-3 rounded-full font-headline font-bold text-sm transition-all duration-300 hover:opacity-95 active:scale-[0.99]"
             >
               Get Started
