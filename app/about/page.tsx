@@ -7,7 +7,7 @@ export default function AboutPage() {
       <section className="sticky top-[68px] z-40 relative overflow-hidden bg-on-surface shadow-sm">
         <div className="absolute top-0 right-0 w-[44rem] h-[44rem] bg-primary/25 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
         <div className="absolute bottom-0 left-0 w-[44rem] h-[44rem] bg-primary-container/20 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />
-        <div className="relative z-10 px-8 py-12 lg:px-16 lg:py-16">
+        <div className="relative z-10 px-8 py-10 lg:px-16 lg:py-12">
           <div className="max-w-7xl mx-auto">
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 text-white text-xs font-bold tracking-wider uppercase font-label backdrop-blur anim-fade-up">
