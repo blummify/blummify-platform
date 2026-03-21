@@ -23,7 +23,7 @@ export default function Home() {
       <HeroBanner />
       <CoreSpecializations />
       <FeaturedProjects />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <CTA />
     </main>
   );
@@ -224,6 +224,7 @@ function FeaturedProjects() {
   );
 }
 
+/* Client Success Stories — hidden for now; uncomment <Testimonials /> above and this block to restore.
 function Testimonials() {
   const testimonials = [
     {
@@ -302,6 +303,7 @@ function Testimonials() {
     </section>
   );
 }
+*/
 
 function CTA() {
   return (
