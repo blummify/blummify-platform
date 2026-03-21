@@ -115,8 +115,20 @@ export default function RootLayout({
         <footer className="bg-[#EFEDEF] w-full py-12">
           <div className="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
             <div className="mb-8 md:mb-0 text-center md:text-left">
-              <div className="text-xl font-bold text-[#1B1C1D] font-headline mb-2">
-                Blummify
+              <div className="mb-3 flex justify-center md:justify-start">
+                <Link
+                  href="/"
+                  className="relative block h-10 w-36 transition-transform duration-300 hover:-translate-y-0.5"
+                  aria-label="Blummify Home"
+                >
+                  <Image
+                    src="/blummifly-logo.png"
+                    alt="Blummify"
+                    fill
+                    sizes="180px"
+                    className="object-contain object-left"
+                  />
+                </Link>
               </div>
               <p className="font-body text-xs text-zinc-600">
                 © {new Date().getFullYear()} Blummify Consulting. All rights
