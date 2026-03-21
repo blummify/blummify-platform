@@ -2,9 +2,69 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { pageDescriptions } from "../_lib/seo";
+import { siteUrl } from "../_lib/site";
+
 export const metadata: Metadata = {
   title: "About",
+  description: pageDescriptions.about,
+  alternates: { canonical: `${siteUrl}/about` },
+  openGraph: {
+    url: `${siteUrl}/about`,
+    description: pageDescriptions.about,
+  },
 };
+
+const coreValues = [
+  {
+    icon: "trending_up",
+    title: "Growth",
+    description:
+      "We are committed to helping businesses grow and reach their full potential.",
+    pillClass: "bg-primary-fixed",
+    iconClass: "text-primary",
+  },
+  {
+    icon: "tune",
+    title: "Simplicity",
+    description:
+      "We believe in clean, simple, and effective solutions that deliver real results.",
+    pillClass: "bg-secondary-container",
+    iconClass: "text-on-secondary-container",
+  },
+  {
+    icon: "auto_awesome",
+    title: "Innovation",
+    description:
+      "We embrace new ideas and continuously improve to create better solutions.",
+    pillClass: "bg-primary-container",
+    iconClass: "text-on-primary-container",
+  },
+  {
+    icon: "verified_user",
+    title: "Reliability",
+    description:
+      "We deliver on our promises and build solutions our clients can depend on.",
+    pillClass: "bg-tertiary-container",
+    iconClass: "text-on-tertiary-container",
+  },
+  {
+    icon: "public",
+    title: "Impact",
+    description:
+      "We focus on creating solutions that make a meaningful difference for businesses.",
+    pillClass: "bg-secondary-fixed",
+    iconClass: "text-secondary",
+  },
+  {
+    icon: "groups",
+    title: "Collaboration",
+    description:
+      "We work closely with our clients to understand their needs and bring their ideas to life.",
+    pillClass: "bg-primary-fixed-dim",
+    iconClass: "text-on-primary-fixed",
+  },
+] as const;
 
 export default function AboutPage() {
   return (
@@ -31,9 +91,8 @@ export default function AboutPage() {
                 className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                We&apos;re a software consulting studio pairing thoughtful design
-                with dependable engineering—so your team can ship web and mobile
-                products, brand experiences, and growth work with confidence.
+                Blummify is a growing digital company focused on helping
+                businesses evolve and succeed in a changing world.
               </p>
             </div>
           </div>
@@ -56,8 +115,8 @@ export default function AboutPage() {
                       Our Mission
                     </h2>
                     <p className="mt-3 text-on-surface-variant font-body leading-relaxed">
-                      To help businesses bloom online by creating and improving
-                      modern digital solutions that drive growth and impact.
+                      We build and improve digital solutions that help businesses
+                      strengthen their online presence.
                     </p>
                   </div>
                 </div>
@@ -75,9 +134,9 @@ export default function AboutPage() {
                       Our Vision
                     </h2>
                     <p className="mt-3 text-on-surface-variant font-body leading-relaxed">
-                      To become a trusted global brand that empowers businesses
-                      to grow, innovate, and succeed through impactful
-                      solutions.
+                      As we grow, our vision is to expand into broader solutions
+                      that support business growth, innovation, and long-term
+                      impact.
                     </p>
                   </div>
                 </div>
@@ -114,136 +173,50 @@ export default function AboutPage() {
           </section>
 
           <section className="mt-20">
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-fixed text-primary text-xs font-bold tracking-wider uppercase font-label">
+            <div className="mx-auto max-w-3xl">
+              <span className="inline-flex items-center gap-2 rounded-full bg-primary-fixed px-4 py-2 font-label text-xs font-bold uppercase tracking-wider text-primary">
                 <span className="material-symbols-outlined text-[18px]">
                   handshake
                 </span>
                 Core Values
               </span>
-              <h2 className="mt-6 text-3xl lg:text-5xl font-headline font-bold tracking-tight text-on-surface">
+              <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-on-surface lg:text-5xl">
                 The principles behind every project we ship.
               </h2>
-              <p className="mt-4 text-on-surface-variant font-body leading-relaxed">
-                These values shape how we think, collaborate, and deliver
-                outcomes that help businesses grow.
+              <p className="mt-4 font-body leading-relaxed text-on-surface-variant">
+                At Blummify, we believe every idea has the potential to grow into
+                something meaningful.
               </p>
             </div>
 
-            <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center">
-                    <span className="material-symbols-outlined text-primary">
-                      trending_up
+            <div className="mx-auto mt-12 grid max-w-6xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
+              {coreValues.map((item, index) => (
+                <div
+                  key={item.title}
+                  className="flex h-full flex-col rounded-2xl border border-black/[0.06] bg-white p-6 shadow-[0_1px_3px_rgba(27,28,29,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_12px_40px_-16px_rgba(27,28,29,0.12)]"
+                >
+                  <div className="flex gap-4">
+                    <span
+                      className={`flex h-[3.75rem] w-11 shrink-0 items-center justify-center rounded-full ${item.pillClass}`}
+                      aria-hidden
+                    >
+                      <span
+                        className={`material-symbols-outlined text-[22px] ${item.iconClass}`}
+                      >
+                        {item.icon}
+                      </span>
                     </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      1. Growth
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We are committed to helping businesses grow and reach
-                      their full potential.
-                    </p>
+                    <div className="min-w-0 flex-1 pt-0.5">
+                      <p className="font-label text-xs font-bold uppercase tracking-[0.12em] text-on-surface">
+                        {index + 1}. {item.title}
+                      </p>
+                      <p className="mt-2 font-body text-sm leading-relaxed text-on-surface-variant">
+                        {item.description}
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center">
-                    <span className="material-symbols-outlined text-on-secondary-container">
-                      tune
-                    </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      2. Simplicity
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We believe in clean, simple, and effective solutions that
-                      deliver real results.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center">
-                    <span className="material-symbols-outlined text-on-primary-container">
-                      auto_awesome
-                    </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      3. Innovation
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We embrace new ideas and continuously improve to create
-                      better solutions.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-tertiary-container flex items-center justify-center">
-                    <span className="material-symbols-outlined text-on-tertiary-container">
-                      verified
-                    </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      4. Reliability
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We deliver on our promises and build solutions our clients
-                      can depend on.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center">
-                    <span className="material-symbols-outlined text-secondary">
-                      public
-                    </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      5. Impact
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We focus on creating solutions that make a meaningful
-                      difference for businesses.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="bg-surface-container-lowest rounded-[2rem] p-7 transition-all duration-500 hover:-translate-y-1 hover:shadow-xl">
-                <div className="flex items-start gap-4">
-                  <span className="w-12 h-12 rounded-full bg-primary-fixed-dim flex items-center justify-center">
-                    <span className="material-symbols-outlined text-on-primary-fixed">
-                      groups
-                    </span>
-                  </span>
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      6. Collaboration
-                    </p>
-                    <p className="mt-2 text-on-surface-variant font-body leading-relaxed">
-                      We work closely with our clients to understand their needs
-                      and bring their ideas to life.
-                    </p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </section>
 
@@ -269,16 +242,17 @@ export default function AboutPage() {
                 Our Story
               </span>
               <h2 className="mt-6 text-3xl lg:text-5xl font-headline font-bold tracking-tight text-on-surface">
-                Built for teams who want to move fast without breaking quality.
+                Partnering for the next chapter of your business
               </h2>
               <div className="mt-6 space-y-4 text-on-surface-variant font-body leading-relaxed">
                 <p>
-                  We work with founders and teams to clarify direction, design a
-                  modern experience, and build software that stays maintainable.
+                  From refining your online presence to exploring new ways to
+                  serve customers, we grow alongside the teams we work with—
+                  learning, building, and iterating together.
                 </p>
                 <p>
-                  The goal is simple: ship confidently, learn quickly, and grow
-                  with a foundation that won&apos;t slow you down later.
+                  When you&apos;re ready to talk through what&apos;s next, we&apos;re
+                  here to help you shape it with clarity and care.
                 </p>
               </div>
 

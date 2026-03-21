@@ -2,9 +2,17 @@ import type { Metadata } from "next";
 import type { ReactNode } from "react";
 
 import ContactInquiryForm from "../_components/ContactInquiryForm";
+import { pageDescriptions } from "../_lib/seo";
+import { siteUrl } from "../_lib/site";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact us",
+  description: pageDescriptions.contact,
+  alternates: { canonical: `${siteUrl}/contact` },
+  openGraph: {
+    url: `${siteUrl}/contact`,
+    description: pageDescriptions.contact,
+  },
 };
 
 function InfoCard({

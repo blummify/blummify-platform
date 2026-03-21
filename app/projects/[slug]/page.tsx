@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
+import { siteUrl } from "../../_lib/site";
 import { getProjectBySlug, projects } from "../_data";
 
 export function generateStaticParams() {
@@ -20,9 +21,29 @@ export async function generateMetadata({
     return { title: "Portfolio" };
   }
 
+  const url = `${siteUrl}/projects/${project.slug}`;
+
   return {
     title: project.name,
     description: project.summary,
+    alternates: { canonical: url },
+    openGraph: {
+      title: `${project.name} | Blummify`,
+      description: project.summary,
+      url,
+      images: [
+        {
+          url: project.imageSrc,
+          alt: project.imageAlt,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${project.name} | Blummify`,
+      description: project.summary,
+      images: [project.imageSrc],
+    },
   };
 }
 

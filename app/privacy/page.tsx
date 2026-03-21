@@ -9,6 +9,12 @@ export const metadata: Metadata = {
     "How Blummify handles information you share through this website and project inquiries.",
   alternates: { canonical: `${siteUrl}/privacy` },
   robots: { index: true, follow: true },
+  openGraph: {
+    url: `${siteUrl}/privacy`,
+    title: "Privacy Policy | Blummify",
+    description:
+      "How Blummify handles information you share through this website and project inquiries.",
+  },
 };
 
 export default function PrivacyPage() {

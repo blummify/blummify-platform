@@ -2,8 +2,17 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { pageDescriptions } from "../_lib/seo";
+import { siteUrl } from "../_lib/site";
+
 export const metadata: Metadata = {
   title: "Services",
+  description: pageDescriptions.services,
+  alternates: { canonical: `${siteUrl}/services` },
+  openGraph: {
+    url: `${siteUrl}/services`,
+    description: pageDescriptions.services,
+  },
 };
 
 export default function ServicesPage() {

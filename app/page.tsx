@@ -2,11 +2,19 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 
+import { pageDescriptions } from "./_lib/seo";
+import { siteUrl } from "./_lib/site";
 import { projects } from "./projects/_data";
 import HeroBanner from "./_components/HeroBanner";
 
 export const metadata: Metadata = {
   title: "Where Ideas Bloom into Digital Success",
+  description: pageDescriptions.home,
+  alternates: { canonical: siteUrl },
+  openGraph: {
+    url: siteUrl,
+    description: pageDescriptions.home,
+  },
 };
 
 export default function Home() {

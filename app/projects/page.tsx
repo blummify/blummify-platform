@@ -1,10 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { pageDescriptions } from "../_lib/seo";
+import { siteUrl } from "../_lib/site";
+
 import { projects } from "./_data";
 
 export const metadata: Metadata = {
   title: "Portfolio",
+  description: pageDescriptions.portfolio,
+  alternates: { canonical: `${siteUrl}/projects` },
+  openGraph: {
+    url: `${siteUrl}/projects`,
+    description: pageDescriptions.portfolio,
+  },
 };
 
 export default function ProjectsPage() {

@@ -3,6 +3,9 @@ import { Plus_Jakarta_Sans, Space_Grotesk } from "next/font/google";
 import Image from "next/image";
 import Link from "next/link";
 import HeaderNav from "./_components/HeaderNav";
+import OrganizationJsonLd from "./_components/OrganizationJsonLd";
+import { defaultSiteDescription, seoKeywords } from "./_lib/seo";
+import { siteUrl } from "./_lib/site";
 import "./globals.css";
 
 const spaceGrotesk = Space_Grotesk({
@@ -17,16 +20,54 @@ const plusJakartaSans = Plus_Jakarta_Sans({
   weight: ["300", "400", "500", "600", "700"],
 });
 
+const defaultTitle = "Where Ideas Bloom into Digital Success | Blummify";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "Where Ideas Bloom into Digital Success | Blummify",
+    default: defaultTitle,
     template: "%s | Blummify",
   },
-  description:
-    "Blummify is a software consulting company helping teams evolve through strategy, engineering, and data intelligence.",
+  description: defaultSiteDescription,
+  keywords: [...seoKeywords],
+  authors: [{ name: "Blummify", url: siteUrl }],
+  creator: "Blummify",
+  publisher: "Blummify",
   icons: {
     icon: "/blummifly-logo.png",
     apple: "/blummifly-logo.png",
+  },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: siteUrl,
+    siteName: "Blummify",
+    title: defaultTitle,
+    description: defaultSiteDescription,
+    images: [
+      {
+        url: "/blummifly-logo.png",
+        width: 512,
+        height: 512,
+        alt: "Blummify — software consulting",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary",
+    title: defaultTitle,
+    description: defaultSiteDescription,
+    images: ["/blummifly-logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
 };
 
@@ -41,6 +82,7 @@ export default function RootLayout({
       className={`${spaceGrotesk.variable} ${plusJakartaSans.variable} scroll-smooth h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
+        <OrganizationJsonLd />
         <div id="top" className="sr-only" />
         <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
           <div className="flex justify-between items-center px-8 py-2 max-w-7xl mx-auto">
