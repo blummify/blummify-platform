@@ -10,7 +10,7 @@ export const organizationJsonLd = {
   url: siteUrl,
   logo: `${siteUrl}/blummifly-logo.png`,
   description:
-    "A growing digital company helping businesses evolve online with solutions that strengthen presence, support growth, and turn ideas into meaningful outcomes.",
+    "Digital consulting for businesses that want stronger products and presence online—web, mobile, brand, and marketing, delivered with care and follow-through.",
   email: "info@blummify.com",
   sameAs: [
     "https://www.linkedin.com/company/blummify/",

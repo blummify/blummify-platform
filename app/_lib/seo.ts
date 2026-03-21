@@ -1,7 +1,7 @@
 /** Shared copy for meta descriptions and discoverability. */
 
 export const defaultSiteDescription =
-  "Blummify is a software consulting company: web and mobile development, branding, and digital marketing—built for clarity, speed, and long-term maintainability.";
+  "We help businesses build and refine their digital presence—websites, apps, brand, and marketing—with straight answers, solid delivery, and work that lasts.";
 
 export const seoKeywords = [
   "Blummify",
@@ -17,13 +17,13 @@ export const seoKeywords = [
 ] as const;
 
 export const pageDescriptions = {
-  home: `${defaultSiteDescription} Explore services, portfolio, and how we partner with your team.`,
+  home: `${defaultSiteDescription} Browse services, see recent work, and reach out when you are ready to talk.`,
   about:
-    "Blummify is a growing digital company helping businesses evolve online—with digital solutions, a clear vision for growth, and the belief that every idea can become something meaningful.",
+    "We are a growing digital company helping businesses adapt and do better online. We ship practical solutions, think long term, and believe good ideas deserve room to grow.",
   services:
-    "Blummify services: web development, mobile apps, branding design, and digital marketing—clear scopes, modern stacks, and measurable outcomes.",
+    "Web, mobile, brand, and marketing—scoped projects, clear timelines, and stacks that make sense for your team today and tomorrow.",
   portfolio:
-    "See Blummify portfolio work: case studies across web, mobile, branding, and growth—with highlights, stack, and outcomes.",
+    "Real projects across web, mobile, branding, and growth. Each one includes what we built, how we approached it, and what changed for the client.",
   contact:
-    "Contact Blummify for your next web, mobile, or brand project. Send a message or reach us by email and WhatsApp.",
+    "Tell us what you need—use the form, email, or WhatsApp. We read every message and usually reply within one business day.",
 } as const;

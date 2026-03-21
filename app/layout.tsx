@@ -49,7 +49,7 @@ export const metadata: Metadata = {
         url: "/blummifly-logo.png",
         width: 512,
         height: 512,
-        alt: "Blummify — software consulting",
+        alt: "Blummify",
       },
     ],
   },
