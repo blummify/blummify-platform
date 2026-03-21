@@ -45,8 +45,8 @@ const coreValues = [
     title: "Reliability",
     description:
       "We deliver on our promises and build solutions our clients can depend on.",
-    pillClass: "bg-tertiary-container",
-    iconClass: "text-on-tertiary-container",
+    pillClass: "bg-primary-fixed-dim",
+    iconClass: "text-on-primary-fixed",
   },
   {
     icon: "public",
@@ -61,8 +61,8 @@ const coreValues = [
     title: "Collaboration",
     description:
       "We work closely with our clients to understand their needs and bring their ideas to life.",
-    pillClass: "bg-primary-fixed-dim",
-    iconClass: "text-on-primary-fixed",
+    pillClass: "bg-primary/15",
+    iconClass: "text-primary",
   },
 ] as const;
 
