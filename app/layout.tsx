@@ -34,8 +34,14 @@ export const metadata: Metadata = {
   creator: "Blummify",
   publisher: "Blummify",
   icons: {
-    icon: "/blummifly-logo.png",
-    apple: "/blummifly-logo.png",
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "48x48" },
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+    shortcut: "/icon.png",
   },
   openGraph: {
     type: "website",
