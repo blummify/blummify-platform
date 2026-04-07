@@ -15,14 +15,6 @@ const subjectOptions = [
   { value: "other", label: "Something else" },
 ] as const;
 
-function buildMailto(body: string, subject: string) {
-  const params = new URLSearchParams({
-    subject,
-    body,
-  });
-  return `mailto:${EMAIL}?${params.toString()}`;
-}
-
 function subjectLabel(value: string) {
   const found = subjectOptions.find((o) => o.value === value);
   return found?.label ?? value;
@@ -37,13 +29,15 @@ export default function ContactInquiryForm() {
   const [consent, setConsent] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
   const messageOk = message.trim().length >= 20;
 
   const onSubmit = useCallback(
-    (e: FormEvent) => {
+    async (e: FormEvent) => {
       e.preventDefault();
       setError(null);
+      setSubmitted(false);
       if (!name.trim() || name.trim().length < 2) {
         setError("Please enter your full name.");
         return;
@@ -65,27 +59,50 @@ export default function ContactInquiryForm() {
         return;
       }
 
-      const lines = [
-        `Name: ${name.trim()}`,
-        `Email: ${email.trim()}`,
-        `Phone: ${phone.trim() || "—"}`,
-        `Subject: ${subjectLabel(subject)}`,
-        "",
-        "Message:",
-        message.trim(),
-      ];
-      const body = lines.join("\n");
-      const mailSubject = `Blummify contact — ${subjectLabel(subject)}`;
+      const normalizedMessage = message.trim();
 
-      if (body.length > 1800) {
+      if (normalizedMessage.length > 1800) {
         setError(
           "Message is a bit long for email. Please shorten slightly and try again.",
         );
         return;
       }
 
-      window.location.href = buildMailto(body, mailSubject);
-      setSubmitted(true);
+      try {
+        setSubmitting(true);
+        const response = await fetch("/api/contact", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: name.trim(),
+            email: email.trim(),
+            phone: phone.trim(),
+            subject: subjectLabel(subject),
+            message: normalizedMessage,
+            consent,
+          }),
+        });
+
+        const payload = (await response.json()) as { error?: string };
+        if (!response.ok) {
+          setError(payload.error ?? "Something went wrong. Please try again.");
+          return;
+        }
+
+        setSubmitted(true);
+        setName("");
+        setEmail("");
+        setPhone("");
+        setSubject("");
+        setMessage("");
+        setConsent(false);
+      } catch {
+        setError("We could not send your message right now. Please try again.");
+      } finally {
+        setSubmitting(false);
+      }
     },
     [consent, email, message, messageOk, name, phone, subject],
   );
@@ -223,17 +240,19 @@ export default function ContactInquiryForm() {
 
       <button
         type="submit"
+        disabled={submitting}
         className="inline-flex w-full items-center justify-center gap-2 bg-signature-gradient px-8 py-4 rounded-2xl font-headline font-bold text-base text-on-primary shadow-md shadow-primary/15 transition-all duration-300 hover:opacity-[0.97] hover:shadow-lg active:scale-[0.99] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
       >
         <span className="material-symbols-outlined text-[22px]" aria-hidden>
           send
         </span>
-        Send Message
+        {submitting ? "Sending..." : "Send Message"}
       </button>
 
       {submitted ? (
         <p className="text-sm text-primary text-center font-body">
-          If your mail app didn&apos;t open, email us directly at {EMAIL}.
+          Thanks, your message has been sent. We&apos;ll reply soon. For urgent
+          follow-up, email {EMAIL}.
         </p>
       ) : null}
     </form>
