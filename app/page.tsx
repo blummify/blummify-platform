@@ -23,7 +23,7 @@ export default function Home() {
       <HeroBanner />
       <CoreSpecializations />
       <FeaturedProjects />
-      {/* <Testimonials /> */}
+      <Testimonials />
       <CTA />
     </main>
   );
@@ -224,32 +224,31 @@ function FeaturedProjects() {
   );
 }
 
-/* Client Success Stories — hidden for now; uncomment <Testimonials /> above and this block to restore.
 function Testimonials() {
   const testimonials = [
     {
       quote:
-        "Blummify felt like an extension of our team. They delivered quickly, communicated clearly, and elevated the quality of our product experience.",
-      name: "Client Partner",
-      title: "Founder",
-      company: "Product Studio",
-      initials: "CP",
+        "Replace with approved client quote: Blummify delivered quickly, communicated clearly, and helped us launch with confidence.",
+      name: "Replace Name",
+      title: "Replace Role",
+      company: "Odutan",
+      initials: "RN",
     },
     {
       quote:
-        "From strategy to execution, the process was structured and dependable. The end result looks modern, performs well, and is easy for our team to maintain.",
-      name: "Operations Lead",
-      title: "Director",
-      company: "Services Company",
-      initials: "OL",
+        "Replace with approved client quote: The process was structured, dependable, and the final product is easy for our team to manage.",
+      name: "Replace Name",
+      title: "Replace Role",
+      company: "Bamda Mining",
+      initials: "RN",
     },
     {
       quote:
-        "Great attention to detail. The UI polish and motion made the brand feel premium, and the rollout was smooth with no surprises.",
-      name: "Product Owner",
-      title: "PM",
-      company: "Growth Team",
-      initials: "PO",
+        "Replace with approved client quote: Great attention to detail from design through delivery, with a smooth rollout.",
+      name: "Replace Name",
+      title: "Replace Role",
+      company: "CKM Marfcos",
+      initials: "RN",
     },
   ] as const;
 
@@ -303,7 +302,6 @@ function Testimonials() {
     </section>
   );
 }
-*/
 
 function CTA() {
   return (
