@@ -228,27 +228,30 @@ function Testimonials() {
   const testimonials = [
     {
       quote:
-        "Replace with approved client quote: Blummify delivered quickly, communicated clearly, and helped us launch with confidence.",
-      name: "Replace Name",
-      title: "Replace Role",
+        "Blummify felt like an extension of our team. They moved fast, kept communication clear, and helped us launch with confidence without cutting corners.",
+      name: "Christos Esh",
+      title: "CEO",
       company: "Odutan",
-      initials: "RN",
+      initials: "CE",
+      rating: 4.5,
     },
     {
       quote:
-        "Replace with approved client quote: The process was structured, dependable, and the final product is easy for our team to manage.",
-      name: "Replace Name",
-      title: "Replace Role",
+        "The delivery process was structured from day one. Every milestone was clear, and the final product is stable, modern, and easy for our internal team to manage.",
+      name: "Esh Christos",
+      title: "CTO",
       company: "Bamda Mining",
-      initials: "RN",
+      initials: "EC",
+      rating: 4,
     },
     {
       quote:
-        "Replace with approved client quote: Great attention to detail from design through delivery, with a smooth rollout.",
-      name: "Replace Name",
-      title: "Replace Role",
+        "Great attention to detail from design through rollout. The team translated our vision into a polished experience and handled the launch smoothly.",
+      name: "Collins Marfo",
+      title: "Founder and CEO",
       company: "CKM Marfcos",
-      initials: "RN",
+      initials: "CM",
+      rating: 4.5,
     },
   ] as const;
 
@@ -273,12 +276,29 @@ function Testimonials() {
             key={t.quote}
             className="bg-surface-container-lowest rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
           >
-            <div className="flex items-center gap-1 text-primary">
-              <span className="material-symbols-outlined text-[18px]">star</span>
-              <span className="material-symbols-outlined text-[18px]">star</span>
-              <span className="material-symbols-outlined text-[18px]">star</span>
-              <span className="material-symbols-outlined text-[18px]">star</span>
-              <span className="material-symbols-outlined text-[18px]">star</span>
+            <div
+              className="flex items-center gap-1.5 text-primary"
+              aria-label={`${t.rating} out of 5 stars`}
+            >
+              {Array.from({ length: 5 }).map((_, index) => {
+                const starPosition = index + 1;
+                const isFull = t.rating >= starPosition;
+                const isHalf = !isFull && t.rating >= starPosition - 0.5;
+
+                return (
+                  <span
+                    key={index}
+                    className="material-symbols-outlined text-[22px]"
+                    style={
+                      isFull || isHalf
+                        ? { fontVariationSettings: '"FILL" 1, "wght" 500' }
+                        : undefined
+                    }
+                  >
+                    {isHalf ? "star_half" : "star"}
+                  </span>
+                );
+              })}
             </div>
             <p className="mt-6 text-on-surface-variant font-body leading-relaxed">
               “{t.quote}”

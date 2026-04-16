@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 
+import { getClientIp, isRateLimited } from "../../_lib/contactRateLimit";
+
 const REQUIRED_ENV_VARS = ["SMTP_HOST", "SMTP_PORT", "SMTP_USER", "SMTP_PASS"] as const;
 
 type ContactPayload = {
@@ -10,6 +12,8 @@ type ContactPayload = {
   subject: string;
   message: string;
   consent: boolean;
+  /** Honeypot — must stay empty (bots often fill hidden fields). */
+  website?: string;
 };
 
 function getMissingEnvVars() {
@@ -66,6 +70,19 @@ export async function POST(req: Request) {
     }
 
     const payload = (await req.json()) as ContactPayload;
+
+    if (sanitize(payload.website).length > 0) {
+      return NextResponse.json({ ok: true });
+    }
+
+    const ip = getClientIp(req);
+    if (isRateLimited(ip)) {
+      return NextResponse.json(
+        { error: "Too many messages from this address. Please try again later." },
+        { status: 429 },
+      );
+    }
+
     const validated = validatePayload(payload);
     if (typeof validated === "string") {
       return NextResponse.json({ error: validated }, { status: 400 });
@@ -83,8 +100,9 @@ export async function POST(req: Request) {
 
     const toEmail = process.env.CONTACT_TO_EMAIL ?? "info@blummify.com";
     const fromEmail = process.env.CONTACT_FROM_EMAIL ?? process.env.SMTP_USER ?? toEmail;
+    const bccEmail = process.env.CONTACT_BCC_EMAIL?.trim();
 
-    await transport.sendMail({
+    const mailOptions: nodemailer.SendMailOptions = {
       from: fromEmail,
       to: toEmail,
       replyTo: validated.email,
@@ -98,7 +116,42 @@ export async function POST(req: Request) {
         "Message:",
         validated.message,
       ].join("\n"),
-    });
+    };
+    if (bccEmail) {
+      mailOptions.bcc = bccEmail;
+    }
+
+    await transport.sendMail(mailOptions);
+
+    const autoreplyDisabled =
+      process.env.CONTACT_AUTOREPLY === "0" || process.env.CONTACT_AUTOREPLY === "false";
+    if (!autoreplyDisabled) {
+      try {
+        const autoreplySubject =
+          process.env.CONTACT_AUTOREPLY_SUBJECT ?? "We received your message — Blummify";
+        await transport.sendMail({
+          from: fromEmail,
+          to: validated.email,
+          subject: autoreplySubject,
+          text: [
+            `Hi ${validated.name},`,
+            "",
+            "Thanks for contacting Blummify. We’ve received your message and will get back to you as soon as we can.",
+            "",
+            "A quick summary of what you sent:",
+            `Subject: ${validated.subject}`,
+            "",
+            validated.message,
+            "",
+            "—",
+            "Blummify",
+            `https://blummify.com`,
+          ].join("\n"),
+        });
+      } catch {
+        /* main inquiry was delivered; autoreply is best-effort */
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch {

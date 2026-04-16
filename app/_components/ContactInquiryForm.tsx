@@ -27,6 +27,8 @@ export default function ContactInquiryForm() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [consent, setConsent] = useState(false);
+  /** Honeypot — leave empty; bots often fill hidden fields. */
+  const [website, setWebsite] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
@@ -82,6 +84,7 @@ export default function ContactInquiryForm() {
             subject: subjectLabel(subject),
             message: normalizedMessage,
             consent,
+            website,
           }),
         });
 
@@ -104,16 +107,32 @@ export default function ContactInquiryForm() {
         setSubmitting(false);
       }
     },
-    [consent, email, message, messageOk, name, phone, subject],
+    [consent, email, message, messageOk, name, phone, subject, website],
   );
 
   return (
     <form
       id="inquiry"
       onSubmit={onSubmit}
-      className="mt-8 space-y-5"
+      className="relative mt-8 space-y-5"
       noValidate
     >
+      <div
+        className="absolute -left-[9999px] h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <label htmlFor="inquiry-website">Company website</label>
+        <input
+          id="inquiry-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+        />
+      </div>
+
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div>
           <label
