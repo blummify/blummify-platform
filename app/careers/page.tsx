@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 
+import { careerRoles } from "./_data";
 import { pageDescriptions } from "../_lib/seo";
 import { siteUrl } from "../_lib/site";
 
@@ -35,30 +36,6 @@ const whyJoin = [
   },
 ] as const;
 
-const openRoles = [
-  {
-    title: "Frontend Engineer",
-    type: "Full-time",
-    location: "Remote / Hybrid",
-    summary:
-      "Build polished, performant interfaces with React and Next.js while collaborating closely with design.",
-  },
-  {
-    title: "Product Designer",
-    type: "Full-time",
-    location: "Remote / Hybrid",
-    summary:
-      "Design user-centered product flows and interfaces that balance business goals with usability.",
-  },
-  {
-    title: "Growth Marketing Specialist",
-    type: "Contract",
-    location: "Remote",
-    summary:
-      "Plan and execute growth campaigns across content, paid channels, and lifecycle messaging.",
-  },
-] as const;
-
 export default function CareersPage() {
   return (
     <main className="pb-16">
@@ -82,9 +59,9 @@ export default function CareersPage() {
                 className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                We are building a team of curious makers and practical problem
-                solvers. If you care about thoughtful work and measurable
-                outcomes, we&apos;d love to hear from you.
+                We are looking for a volunteer to help build one of Blummify&apos;s
+                platforms. This role includes stipend support and hands-on
+                product experience.
               </p>
             </div>
           </div>
@@ -139,19 +116,19 @@ export default function CareersPage() {
               <span className="material-symbols-outlined text-[18px]">
                 badge
               </span>
-              Open roles
+              Opportunity
             </span>
             <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-on-surface lg:text-5xl">
-              Current opportunities
+              Volunteer role
             </h2>
             <p className="mt-4 font-body leading-relaxed text-on-surface-variant">
-              Don&apos;t see the perfect fit? Reach out anyway. We&apos;re always
-              open to meeting strong talent.
+              Apply by sending your CV to info@blummify.com. We are currently
+              recruiting for one volunteer role.
             </p>
           </div>
 
           <div className="mt-10 space-y-4">
-            {openRoles.map((role) => (
+            {careerRoles.map((role) => (
               <article
                 key={role.title}
                 className="rounded-2xl border border-black/[0.05] bg-white p-6 shadow-sm"
@@ -173,15 +150,15 @@ export default function CareersPage() {
                       {role.summary}
                     </p>
                   </div>
-                  <a
-                    href="mailto:careers@blummify.com?subject=Application%20for%20role"
+                  <Link
+                    href={`/careers/${role.slug}`}
                     className="inline-flex items-center justify-center gap-2 rounded-full bg-signature-gradient px-6 py-3 font-headline text-sm font-bold text-on-primary transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
                   >
-                    Apply now
+                    View role
                     <span className="material-symbols-outlined text-[18px]">
                       arrow_forward
                     </span>
-                  </a>
+                  </Link>
                 </div>
               </article>
             ))}
@@ -195,15 +172,15 @@ export default function CareersPage() {
             Build with us
           </h2>
           <p className="mx-auto mt-5 max-w-2xl font-body leading-relaxed text-white/75">
-            Send your portfolio, LinkedIn, or resume to our team and tell us
-            what kind of work energizes you.
+            Send your CV to info@blummify.com and tell us why you are a good
+            fit for this volunteer role.
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:careers@blummify.com"
+              href="mailto:info@blummify.com?subject=Volunteer%20Platform%20Developer%20Application"
               className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-headline text-sm font-bold text-on-surface transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
             >
-              careers@blummify.com
+              Send CV to info@blummify.com
             </a>
             <Link
               href="/contact"

@@ -27,5 +27,5 @@ export const pageDescriptions = {
   contact:
     "Tell us what you need—use the form, email, or WhatsApp. We read every message and usually reply within one business day.",
   careers:
-    "Join Blummify and help shape practical digital products across web, mobile, brand, and growth. Explore open roles and how we work.",
+    "Volunteer opportunity at Blummify: help build one of our platforms using HTML, CSS, Next.js, React.js, Express.js, and Node.js, with stipend support.",
 } as const;
