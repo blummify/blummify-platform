@@ -59,11 +59,68 @@ export default function CareersPage() {
                 className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                We are looking for a volunteer to help build one of Blummify&apos;s
-                platforms. This role includes stipend support and hands-on
-                product experience.
+                Build your career with Blummify through a real platform
+                development role, with stipend support and practical,
+                hands-on experience.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-surface-container-low py-14 lg:py-20">
+        <div className="mx-auto max-w-7xl px-8">
+          <div className="max-w-3xl">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary-fixed px-4 py-2 font-label text-xs font-bold uppercase tracking-wider text-primary">
+              <span className="material-symbols-outlined text-[18px]">
+                badge
+              </span>
+              Opportunity
+            </span>
+            <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-on-surface lg:text-5xl">
+              Career opportunity
+            </h2>
+            <p className="mt-4 font-body leading-relaxed text-on-surface-variant">
+              Apply by sending your CV to info@blummify.com. We are currently
+              recruiting for one career role.
+            </p>
+          </div>
+
+          <div className="mt-10 space-y-4">
+            {careerRoles.map((role) => (
+              <article
+                key={role.title}
+                className="rounded-2xl border border-black/[0.05] bg-white p-6 shadow-sm"
+              >
+                <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
+                  <div>
+                    <h3 className="font-headline text-xl font-bold text-on-surface">
+                      {role.title}
+                    </h3>
+                    <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-on-surface-variant">
+                      <span className="rounded-full bg-surface-container-high px-3 py-1">
+                        {role.type}
+                      </span>
+                      <span className="rounded-full bg-surface-container-high px-3 py-1">
+                        {role.location}
+                      </span>
+                    </div>
+                    <p className="mt-4 max-w-3xl font-body leading-relaxed text-on-surface-variant">
+                      {role.summary}
+                    </p>
+                  </div>
+                  <Link
+                    href={`/careers/${role.slug}`}
+                    className="inline-flex items-center justify-center gap-2 rounded-full bg-signature-gradient px-6 py-3 font-headline text-sm font-bold text-on-primary transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
+                  >
+                    View role
+                    <span className="material-symbols-outlined text-[18px]">
+                      arrow_forward
+                    </span>
+                  </Link>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
@@ -108,89 +165,7 @@ export default function CareersPage() {
           </div>
         </div>
       </section>
-
-      <section className="bg-surface-container-low py-14 lg:py-20">
-        <div className="mx-auto max-w-7xl px-8">
-          <div className="max-w-3xl">
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary-fixed px-4 py-2 font-label text-xs font-bold uppercase tracking-wider text-primary">
-              <span className="material-symbols-outlined text-[18px]">
-                badge
-              </span>
-              Opportunity
-            </span>
-            <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-on-surface lg:text-5xl">
-              Volunteer role
-            </h2>
-            <p className="mt-4 font-body leading-relaxed text-on-surface-variant">
-              Apply by sending your CV to info@blummify.com. We are currently
-              recruiting for one volunteer role.
-            </p>
-          </div>
-
-          <div className="mt-10 space-y-4">
-            {careerRoles.map((role) => (
-              <article
-                key={role.title}
-                className="rounded-2xl border border-black/[0.05] bg-white p-6 shadow-sm"
-              >
-                <div className="flex flex-col gap-5 md:flex-row md:items-center md:justify-between">
-                  <div>
-                    <h3 className="font-headline text-xl font-bold text-on-surface">
-                      {role.title}
-                    </h3>
-                    <div className="mt-2 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-wider text-on-surface-variant">
-                      <span className="rounded-full bg-surface-container-high px-3 py-1">
-                        {role.type}
-                      </span>
-                      <span className="rounded-full bg-surface-container-high px-3 py-1">
-                        {role.location}
-                      </span>
-                    </div>
-                    <p className="mt-4 max-w-3xl font-body leading-relaxed text-on-surface-variant">
-                      {role.summary}
-                    </p>
-                  </div>
-                  <Link
-                    href={`/careers/${role.slug}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full bg-signature-gradient px-6 py-3 font-headline text-sm font-bold text-on-primary transition-all duration-300 hover:opacity-95 hover:-translate-y-0.5 hover:shadow-xl active:scale-[0.99]"
-                  >
-                    View role
-                    <span className="material-symbols-outlined text-[18px]">
-                      arrow_forward
-                    </span>
-                  </Link>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="px-8 py-14 lg:py-20">
-        <div className="mx-auto max-w-5xl rounded-[2rem] bg-on-surface px-8 py-12 text-center shadow-xl lg:px-12">
-          <h2 className="font-headline text-3xl font-bold tracking-tight text-white lg:text-5xl">
-            Build with us
-          </h2>
-          <p className="mx-auto mt-5 max-w-2xl font-body leading-relaxed text-white/75">
-            Send your CV to info@blummify.com and tell us why you are a good
-            fit for this volunteer role.
-          </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-4">
-            <a
-              href="mailto:info@blummify.com?subject=Volunteer%20Platform%20Developer%20Application"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 font-headline text-sm font-bold text-on-surface transition-all duration-300 hover:-translate-y-0.5 hover:shadow-2xl"
-            >
-              Send CV to info@blummify.com
-            </a>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center rounded-full border border-white/25 px-8 py-3 font-headline text-sm font-bold text-white transition-all duration-300 hover:bg-white hover:text-on-surface"
-            >
-              Contact our team
-            </Link>
-          </div>
-        </div>
-      </section>
+    
     </main>
   );
 }

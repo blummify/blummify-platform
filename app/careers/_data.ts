@@ -13,13 +13,13 @@ export type CareerRole = {
 
 export const careerRoles: CareerRole[] = [
   {
-    slug: "volunteer-platform-developer",
-    title: "Volunteer Platform Developer",
-    type: "Volunteer",
+    slug: "platform-developer",
+    title: "Fullstack Developer",
+    type: "Career Opportunity",
     location: "Remote",
     stack: ["HTML", "CSS", "Next.js", "React.js", "Express.js", "Node.js"],
     summary:
-      "We are looking for a volunteer to help build one of Blummify's platforms using HTML, CSS, Next.js, React.js, Express.js, and Node.js.",
+      "We are looking for a developer to help build one of Blummify's platforms using HTML, CSS, Next.js, React.js, Express.js, and Node.js.",
     overview:
       "You will support the build and improvement of a Blummify platform, collaborating with our team to deliver clean, reliable features across frontend and backend.",
     responsibilities: [
