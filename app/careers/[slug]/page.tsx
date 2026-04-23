@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 
 import { siteUrl } from "../../_lib/site";
 import { careerRoles, getCareerRoleBySlug } from "../_data";
@@ -15,6 +15,12 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (slug === "platform-developer") {
+    return {
+      title: "Fullstack Developer role",
+      alternates: { canonical: `${siteUrl}/careers/fullstack` },
+    };
+  }
   const role = getCareerRoleBySlug(slug);
 
   if (!role) {
@@ -45,6 +51,9 @@ export default async function CareerRoleDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+  if (slug === "platform-developer") {
+    redirect("/careers/fullstack");
+  }
   const role = getCareerRoleBySlug(slug);
 
   if (!role) {
@@ -87,6 +96,14 @@ export default async function CareerRoleDetailPage({
                 <span className="rounded-full bg-white/10 px-3 py-1 backdrop-blur">
                   {role.type}
                 </span>
+                {role.tags.map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-full bg-white/10 px-3 py-1 backdrop-blur"
+                  >
+                    {tag}
+                  </span>
+                ))}
                 <span className="rounded-full bg-white/10 px-3 py-1 backdrop-blur">
                   {role.location}
                 </span>
@@ -119,9 +136,12 @@ export default async function CareerRoleDetailPage({
             </h3>
             <ul className="mt-4 space-y-3">
               {role.responsibilities.map((item) => (
-                <li key={item} className="flex gap-3 text-on-surface-variant">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-on-surface-variant"
+                >
                   <span
-                    className="material-symbols-outlined text-primary"
+                    className="material-symbols-outlined mt-0.5 shrink-0 text-[20px] leading-none text-primary"
                     aria-hidden
                   >
                     check_circle
@@ -136,9 +156,12 @@ export default async function CareerRoleDetailPage({
             </h3>
             <ul className="mt-4 space-y-3">
               {role.requirements.map((item) => (
-                <li key={item} className="flex gap-3 text-on-surface-variant">
+                <li
+                  key={item}
+                  className="flex items-start gap-3 text-on-surface-variant"
+                >
                   <span
-                    className="material-symbols-outlined text-primary"
+                    className="material-symbols-outlined mt-0.5 shrink-0 text-[20px] leading-none text-primary"
                     aria-hidden
                   >
                     radio_button_checked
@@ -154,16 +177,22 @@ export default async function CareerRoleDetailPage({
               <h2 className="font-headline text-xl font-bold text-on-surface">
                 What we offer
               </h2>
-              <div className="mt-5 flex flex-wrap gap-2">
+              <ul className="mt-5 space-y-3">
                 {role.perks.map((perk) => (
-                  <span
+                  <li
                     key={perk}
-                    className="rounded-full bg-secondary-container px-3 py-1 text-xs font-bold uppercase tracking-wider text-on-secondary-container"
+                    className="flex items-start gap-3 text-on-surface-variant"
                   >
-                    {perk}
-                  </span>
+                    <span
+                      className="material-symbols-outlined mt-1 shrink-0 text-[20px] leading-none text-primary"
+                      aria-hidden
+                    >
+                      check_circle
+                    </span>
+                    <span className="font-body leading-relaxed">{perk}</span>
+                  </li>
                 ))}
-              </div>
+              </ul>
 
               <a
                 href={`mailto:info@blummify.com?subject=${applySubject}`}

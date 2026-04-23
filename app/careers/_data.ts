@@ -2,6 +2,7 @@ export type CareerRole = {
   slug: string;
   title: string;
   type: string;
+  tags: string[];
   location: string;
   stack: string[];
   summary: string;
@@ -13,15 +14,16 @@ export type CareerRole = {
 
 export const careerRoles: CareerRole[] = [
   {
-    slug: "platform-developer",
-    title: "Fullstack Developer",
+    slug: "fullstack",
+    title: "Fullstack Developer (Volunteer)",
     type: "Career Opportunity",
+    tags: ["Volunteer"],
     location: "Remote",
     stack: ["HTML", "CSS", "Next.js", "React.js", "Express.js", "Node.js"],
     summary:
-      "We are looking for a developer to help build one of Blummify's platforms using HTML, CSS, Next.js, React.js, Express.js, and Node.js.",
+      "We are looking for a volunteer developer to help build one of Blummify's products using HTML, CSS, Next.js, React.js, Express.js, and Node.js.",
     overview:
-      "You will support the build and improvement of a Blummify platform, collaborating with our team to deliver clean, reliable features across frontend and backend.",
+      "You will support the development and continuous improvement of one of Blummify’s products, working closely with the team to deliver high-quality, reliable features across both frontend and backend systems.",
     responsibilities: [
       "Help build and improve product features with HTML, CSS, Next.js, React.js, Express.js, and Node.js",
       "Collaborate with the team to implement pages, APIs, and user-facing experiences",
@@ -35,9 +37,9 @@ export const careerRoles: CareerRole[] = [
       "Commitment to delivering tasks reliably",
     ],
     perks: [
-      "Monthly stipend support",
       "Hands-on mentorship and practical experience",
       "Opportunity to contribute to a live platform",
+      "Monthly stipend",
     ],
   },
 ];

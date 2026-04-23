@@ -59,9 +59,7 @@ export default function CareersPage() {
                 className="mt-5 font-body text-lg leading-relaxed text-white/80 anim-fade-up"
                 style={{ animationDelay: "160ms" }}
               >
-                Build your career with Blummify through a real platform
-                development role, with stipend support and practical,
-                hands-on experience.
+                Build meaningful products with us and grow your career at Blummify.
               </p>
             </div>
           </div>
@@ -77,13 +75,6 @@ export default function CareersPage() {
               </span>
               Opportunity
             </span>
-            <h2 className="mt-6 font-headline text-3xl font-bold tracking-tight text-on-surface lg:text-5xl">
-              Career opportunity
-            </h2>
-            <p className="mt-4 font-body leading-relaxed text-on-surface-variant">
-              Apply by sending your CV to info@blummify.com. We are currently
-              recruiting for one career role.
-            </p>
           </div>
 
           <div className="mt-10 space-y-4">
@@ -101,6 +92,14 @@ export default function CareersPage() {
                       <span className="rounded-full bg-surface-container-high px-3 py-1">
                         {role.type}
                       </span>
+                      {role.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-secondary-container px-3 py-1 text-on-secondary-container"
+                        >
+                          {tag}
+                        </span>
+                      ))}
                       <span className="rounded-full bg-surface-container-high px-3 py-1">
                         {role.location}
                       </span>
