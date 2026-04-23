@@ -26,4 +26,6 @@ export const pageDescriptions = {
     "Real projects across web, mobile, branding, and growth. Each one includes what we built, how we approached it, and what changed for the client.",
   contact:
     "Tell us what you need—use the form, email, or WhatsApp. We read every message and usually reply within one business day.",
+  careers:
+    "Join Blummify and help shape practical digital products across web, mobile, brand, and growth. Explore open roles and how we work.",
 } as const;

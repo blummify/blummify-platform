@@ -162,6 +162,12 @@ export default function RootLayout({
               </Link>
               <Link
                 className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
+                href="/careers"
+              >
+                Careers
+              </Link>
+              <Link
+                className="text-zinc-600 hover:text-[#7AD0A4] transition-colors"
                 href="/contact"
               >
                 Contact
