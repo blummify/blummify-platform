@@ -84,6 +84,54 @@ export const projects: Project[] = [
     ],
     liveUrl: "https://ckmmarfcos.com/",
   },
+  {
+    slug: "fam-multimedia",
+    name: "FAM Multimedia",
+    year: "2025",
+    summary:
+      "Events and entertainment platform featuring concerts, corporate events, conferences, and community outreach programs with ticket booking and vendor management.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Live concert stage with vibrant lighting and crowd",
+    services: [
+      "Web Development",
+      "Event Management",
+      "Ticketing System",
+      "UI/UX Design",
+    ],
+    stack: ["Laravel", "Blade", "Tailwind CSS", "JavaScript"],
+    highlights: [
+      "Comprehensive event management system for concerts, entertainment, and corporate events",
+      "Integrated ticket booking platform with secure payment processing",
+      "Vendor and sponsor management features for event partnerships",
+      "Community outreach section highlighting social impact initiatives",
+    ],
+    liveUrl: "https://fammultimedia.com/",
+  },
+  {
+    slug: "brix-tech-solutions",
+    name: "Brix Tech Solutions",
+    year: "2025",
+    summary:
+      "Corporate website and digital presence for a full-service IT company specializing in cloud engineering, cybersecurity, data management, and software development for federal and commercial clients.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Modern data center with server infrastructure and cybersecurity systems",
+    services: [
+      "Web Development",
+      "Brand Identity",
+      "Content Strategy",
+      "UI/UX Design",
+    ],
+    stack: ["Laravel", "Blade", "Tailwind CSS", "JavaScript"],
+    highlights: [
+      "Professional corporate website showcasing six core service areas",
+      "Clear service architecture for data, cloud, software, cybersecurity, and support solutions",
+      "Trust-focused design emphasizing federal and commercial expertise",
+      "Responsive layout optimized for B2B client engagement and conversion",
+    ],
+    liveUrl: "https://brixtechsolutions.com/",
+  },
 ];
 
 export function getProjectBySlug(slug: string) {
