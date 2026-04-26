@@ -113,7 +113,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Documentation and training",
     ],
     timeline: "4-12 weeks",
-    startingPrice: "$3,000",
+    startingPrice: "GH₵ 5,000",
     relatedProjectSlugs: ["odutan-platform", "bamda-mining-platform", "ckm-marfcos"],
   },
   {
@@ -203,7 +203,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Source code and documentation",
     ],
     timeline: "8-20 weeks",
-    startingPrice: "$8,000",
+    startingPrice: "GH₵ 20,000",
     relatedProjectSlugs: ["fam-multimedia"],
   },
   {
@@ -293,7 +293,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Brand asset library",
     ],
     timeline: "4-8 weeks",
-    startingPrice: "$2,500",
+    startingPrice: "GH₵ 8,500",
     relatedProjectSlugs: ["brix-tech-solutions"],
   },
   {
@@ -383,7 +383,7 @@ export const serviceDetails: ServiceDetail[] = [
       "Monthly performance reports",
     ],
     timeline: "Ongoing",
-    startingPrice: "$1,500/month",
+    startingPrice: "GH₵ 22,500/month",
     relatedProjectSlugs: ["odutan-platform", "bamda-mining-platform"],
   },
 ];
