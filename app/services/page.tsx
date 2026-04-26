@@ -31,8 +31,8 @@ export default function ServicesPage() {
       description:
         "Modern websites and web apps engineered for performance, accessibility, and long-term maintainability.",
       image: {
-        src: "/images/service-web-dev.webp",
-        alt: "Abstract data visualization with clean green lines",
+        src: "/images/service-web-dev-new.webp",
+        alt: "Developer working on code with multiple screens",
       },
       metric: "Fast delivery",
     },
@@ -43,8 +43,8 @@ export default function ServicesPage() {
       description:
         "iOS and Android apps built for reliability, speed, and the kind of UX users want to keep.",
       image: {
-        src: "/images/service-mobile-dev.webp",
-        alt: "Close up of hands working on a sleek laptop",
+        src: "/images/service-mobile-dev-new.webp",
+        alt: "Mobile phone showing app interface",
       },
       metric: "Reliable apps",
     },
@@ -55,8 +55,8 @@ export default function ServicesPage() {
       description:
         "A cohesive brand system and UI direction that elevates trust, clarity, and conversion.",
       image: {
-        src: "/images/service-branding.webp",
-        alt: "Modern office team collaborating in a bright airy space",
+        src: "/images/service-branding-new.webp",
+        alt: "Brand design materials with color swatches and logos",
       },
       metric: "Premium look",
     },
@@ -67,8 +67,8 @@ export default function ServicesPage() {
       description:
         "Growth-focused strategy and execution designed to increase visibility and capture qualified leads.",
       image: {
-        src: "/images/service-marketing.webp",
-        alt: "Abstract data visualization with clean green lines",
+        src: "/images/service-marketing-new.webp",
+        alt: "Analytics dashboard showing marketing metrics and growth",
       },
       metric: "Lead growth",
     },
@@ -142,8 +142,8 @@ export default function ServicesPage() {
                     <Image
                       src={service.image.src}
                       alt={service.image.alt}
-                      width={512}
-                      height={512}
+                      width={1024}
+                      height={683}
                       sizes="(min-width: 1024px) 360px, 100vw"
                       quality={90}
                       className="object-cover"

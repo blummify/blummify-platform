@@ -37,8 +37,8 @@ function CoreSpecializations() {
       description:
         "Modern websites and web apps engineered for performance, accessibility, and maintainability.",
       metric: "Fast delivery",
-      imageSrc: "/images/home-web-dev.webp",
-      imageAlt: "Abstract data visualization with clean green lines",
+      imageSrc: "/images/service-web-dev-new.webp",
+      imageAlt: "Developer working on code with multiple screens",
     },
     {
       icon: "smartphone",
@@ -46,8 +46,8 @@ function CoreSpecializations() {
       description:
         "iOS and Android apps built for reliability, speed, and a polished user experience.",
       metric: "Reliable apps",
-      imageSrc: "/images/home-mobile-dev.webp",
-      imageAlt: "Close up of hands working on a sleek laptop",
+      imageSrc: "/images/service-mobile-dev-new.webp",
+      imageAlt: "Mobile phone showing app interface",
     },
     {
       icon: "palette",
@@ -55,8 +55,8 @@ function CoreSpecializations() {
       description:
         "A cohesive identity and UI system that elevates trust, clarity, and conversion.",
       metric: "Premium look",
-      imageSrc: "/images/home-branding.webp",
-      imageAlt: "Modern office team collaborating in a bright airy space",
+      imageSrc: "/images/service-branding-new.webp",
+      imageAlt: "Brand design materials with color swatches and logos",
     },
     {
       icon: "campaign",
@@ -64,8 +64,8 @@ function CoreSpecializations() {
       description:
         "Growth strategy and execution designed to increase visibility and capture qualified leads.",
       metric: "Lead growth",
-      imageSrc: "/images/home-marketing.webp",
-      imageAlt: "Abstract data visualization with clean green lines",
+      imageSrc: "/images/service-marketing-new.webp",
+      imageAlt: "Analytics dashboard showing marketing metrics and growth",
     },
   ] as const;
 
@@ -95,8 +95,8 @@ function CoreSpecializations() {
               <Image
                 src={service.imageSrc}
                 alt={service.imageAlt}
-                width={512}
-                height={512}
+                width={1024}
+                height={683}
                 sizes="(min-width: 1024px) 360px, 100vw"
                 quality={90}
                 className="object-cover"
