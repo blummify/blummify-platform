@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 import { pageDescriptions } from "../_lib/seo";
 import { siteUrl } from "../_lib/site";
@@ -57,54 +58,64 @@ export default function ProjectsPage() {
         </div>
       </section>
 
-      <div className="px-8">
+      <div className="px-8 py-16">
         <div className="max-w-7xl mx-auto">
-          <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map((project, index) => (
               <Link
                 key={project.slug}
                 href={`/projects/${project.slug}`}
-                className="group bg-surface-container-lowest rounded-[2rem] p-8 transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl"
+                className="group bg-surface rounded-[2rem] overflow-hidden transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl"
                 style={{ animationDelay: `${index * 60}ms` }}
               >
-                <div className="flex items-start justify-between gap-6">
-                  <div>
-                    <p className="text-xs font-bold tracking-wider uppercase text-on-surface-variant font-label">
-                      {project.year}
-                    </p>
-                    <h2 className="mt-3 text-2xl font-headline font-bold text-on-surface">
-                      {project.name}
-                    </h2>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src={project.imageSrc}
+                    alt={project.imageAlt}
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    quality={90}
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-on-surface/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-start justify-between gap-4 mb-4">
+                    <div>
+                      <p className="text-xs font-bold tracking-wider uppercase text-primary font-label">
+                        {project.year}
+                      </p>
+                      <h2 className="mt-2 text-xl font-headline font-bold text-on-surface group-hover:text-primary transition-colors">
+                        {project.name}
+                      </h2>
+                    </div>
+                    <div className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center transition-transform duration-300 group-hover:rotate-[-6deg] group-hover:scale-110">
+                      <span className="material-symbols-outlined text-primary text-lg">
+                        arrow_outward
+                      </span>
+                    </div>
                   </div>
-                  <span className="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center transition-transform duration-300 group-hover:rotate-[-6deg] group-hover:scale-105">
-                    <span className="material-symbols-outlined text-primary">
-                      work
-                    </span>
-                  </span>
-                </div>
 
-                <p className="mt-5 text-on-surface-variant font-body leading-relaxed">
-                  {project.summary}
-                </p>
+                  <p className="text-on-surface-variant font-body text-sm leading-relaxed line-clamp-2 mb-4">
+                    {project.summary}
+                  </p>
 
-                <div className="mt-6 flex flex-wrap gap-2">
-                  {project.services.slice(0, 3).map((s) => (
-                    <span
-                      key={s}
-                      className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-label"
-                    >
-                      {s}
-                    </span>
-                  ))}
-                </div>
-
-                <div className="mt-7 flex items-center justify-between">
-                  <span className="text-primary font-bold font-headline">
-                    View details
-                  </span>
-                  <span className="material-symbols-outlined text-primary transition-transform duration-300 group-hover:translate-x-1">
-                    arrow_forward
-                  </span>
+                  <div className="flex flex-wrap gap-2">
+                    {project.services.slice(0, 2).map((s) => (
+                      <span
+                        key={s}
+                        className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-label"
+                      >
+                        {s}
+                      </span>
+                    ))}
+                    {project.services.length > 2 && (
+                      <span className="px-3 py-1 rounded-full bg-surface-container text-on-surface-variant text-xs font-label">
+                        +{project.services.length - 2}
+                      </span>
+                    )}
+                  </div>
                 </div>
               </Link>
             ))}
