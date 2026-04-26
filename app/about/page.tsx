@@ -168,7 +168,7 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-surface-container shadow-xl">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw"
+                  src="/images/about-mission.jpg"
                   alt="Abstract data visualization"
                   fill
                   sizes="(min-width: 1024px) 560px, 100vw"
@@ -231,7 +231,7 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-surface-container shadow-xl">
                 <Image
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g"
+                  src="/images/about-story.jpg"
                   alt="Consulting team collaborating"
                   fill
                   sizes="(min-width: 1024px) 520px, 100vw"

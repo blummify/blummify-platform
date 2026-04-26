@@ -37,8 +37,7 @@ function CoreSpecializations() {
       description:
         "Modern websites and web apps engineered for performance, accessibility, and maintainability.",
       metric: "Fast delivery",
-      imageSrc:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
+      imageSrc: "/images/home-web-dev.jpg",
       imageAlt: "Abstract data visualization with clean green lines",
     },
     {
@@ -47,8 +46,7 @@ function CoreSpecializations() {
       description:
         "iOS and Android apps built for reliability, speed, and a polished user experience.",
       metric: "Reliable apps",
-      imageSrc:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDPRMMrZeiblkDxXELyquAD9RscP2e7e0jN_kkJ0BfeGrZTPHmQN79x-2re0hGlTXiO9d4x_ITgigEDee-RNMYtuwHD2xULhJfYsZ8IqQ7IBCDKGxfplUbWR1o-yYM4QNSp6ywW7Wyx5iUq203nxxw2H1nvseHMVrhc3UT6RAYV7C1LkI3-f_qp9GLpfLq3MH65xknMmJRg8JZN985GocyjcOUvlVit6CO40EZhqTg5DIW7Z4U2ftlaQDW2N8dJECJEZOjEJcOjdw",
+      imageSrc: "/images/home-mobile-dev.jpg",
       imageAlt: "Close up of hands working on a sleek laptop",
     },
     {
@@ -57,8 +55,7 @@ function CoreSpecializations() {
       description:
         "A cohesive identity and UI system that elevates trust, clarity, and conversion.",
       metric: "Premium look",
-      imageSrc:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuDIJAPDlotjWcVtvo-up8HWyAwYdkU5wgTSpXIxwKWkYmpJxvxN3aWWdpcXCgkYvIWDVIDw5DkXsLEOKmCmXJ9tq5O4chjfvs8Vnk1GhafhVMBpdVjkfUyA6BJueufmKjQf-VBb9m7pG_Lech-va4hoM0cPO_jFQAwcahZFRvLMPPOTnuQFkw_-24YuDtE-oBIZV3Tf9VHcF6PIvUDqzknNL7ACVI3LF-n8gr90YaLb1B_dogRwKrt0FsOggb9du-JVMRLAH8A8_g",
+      imageSrc: "/images/home-branding.jpg",
       imageAlt: "Modern office team collaborating in a bright airy space",
     },
     {
@@ -67,8 +64,7 @@ function CoreSpecializations() {
       description:
         "Growth strategy and execution designed to increase visibility and capture qualified leads.",
       metric: "Lead growth",
-      imageSrc:
-        "https://lh3.googleusercontent.com/aida-public/AB6AXuCzNnTZpWtzdEHSq2il11IMwmUhxEfsrBhCYAG0Fip3yIq1_oOPkc-yfvWvIA1Uac3VFxBgWqNNAdRjpq-thY4s5GBu4n1Renr3F72EQ67JE2lGT0Ihste-IRKzkibznwp-w9qPicxr1qGePxF4d2JUn-jlfP4gjBb7K7jf1gIPGApvYeLYhRfx5NB1aIFPlbpczer67oYL8TyYareWNsNs2cMTx_p3b4EYjDZAnmvWjEIrXgGfrb5PRVBgPj53ZGBYXOHuVw-qWw",
+      imageSrc: "/images/home-marketing.jpg",
       imageAlt: "Abstract data visualization with clean green lines",
     },
   ] as const;

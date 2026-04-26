@@ -19,8 +19,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "Corporate website and multilingual experience for Odutan, designed to present services, projects, and company story with a polished, responsive interface.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1541888946425-d81bb19240f5?auto=format&fit=crop&w=1200&q=80",
+    imageSrc: "/images/project-odutan.jpg",
     imageAlt: "Construction team reviewing site plans outdoors",
     services: [
       "Web Development",
@@ -43,8 +42,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "High-impact corporate platform for Bamda Mining & Construction focused on industrial credibility, service clarity, and multilingual communication.",
-    imageSrc:
-      "https://lh3.googleusercontent.com/aida-public/AB6AXuDUo5k25ooqM6yG7Bat_jxIHCmN85z1rLSL5IMBDtpDWzgIcGG-7MHaxR8gWqnVFARsQDFP7kMYnztn-FfGIPp906Ewgb8PcUSHEz3oeR9QQue2LEX4pZQ6WU-zZq3H3h71IN4IjYUZeQ4HWXNPUp5bX_byUN2ON97FN7NeloCb44LaKdPW5_w2XlyJ6K0CSW8IlCO_IOc-P8URUNikrqPCepQNs5u3p4R0-iOj5J7m16SzXsuo0uUPHaSvNeaxPKgu7bcpxL3aJvI",
+    imageSrc: "/images/project-featured.jpg",
     imageAlt: "Heavy-duty mining site operations with large machinery",
     services: [
       "Web Development",
@@ -67,8 +65,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "E-commerce and brand experience for a Ghana-based herbal remedies retailer—shop, categories, search, cart, and checkout built for clarity and conversion.",
-    imageSrc:
-      "https://ckmmarfcos.com/storage/banners/01KKQ9WC6CR32X3NV4MNGD5CQ2.jpg",
+    imageSrc: "/images/project-ckm.jpg",
     imageAlt: "Marfcos Herbal storefront hero promoting warehouse products",
     services: [
       "Web Development",
@@ -90,8 +87,7 @@ export const projects: Project[] = [
     year: "2025",
     summary:
       "Events and entertainment platform featuring concerts, corporate events, conferences, and community outreach programs with ticket booking and vendor management.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1540039155733-5bb30b53aa14?auto=format&fit=crop&w=1200&q=80",
+    imageSrc: "/images/project-fam.jpg",
     imageAlt: "Live concert stage with vibrant lighting and crowd",
     services: [
       "Web Development",
@@ -114,8 +110,7 @@ export const projects: Project[] = [
     year: "2025",
     summary:
       "Corporate website and digital presence for a full-service IT company specializing in cloud engineering, cybersecurity, data management, and software development for federal and commercial clients.",
-    imageSrc:
-      "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&w=1200&q=80",
+    imageSrc: "/images/project-brix.jpg",
     imageAlt: "Modern data center with server infrastructure and cybersecurity systems",
     services: [
       "Web Development",

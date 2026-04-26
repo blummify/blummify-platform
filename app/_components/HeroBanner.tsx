@@ -6,7 +6,7 @@ export default function HeroBanner() {
     <section className="relative overflow-hidden min-h-[calc(100dvh-112px)]">
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1653566031535-bcf33e1c2893?auto=format&fit=crop&w=2400&q=90"
+          src="/images/hero-banner.jpg"
           alt="Black professionals collaborating in a meeting with laptops"
           fill
           sizes="100vw"
