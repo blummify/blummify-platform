@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 
 import { siteUrl } from "../../_lib/site";
 import { getProjectBySlug, projects } from "../_data";
+import BreadcrumbJsonLd from "../../_components/BreadcrumbJsonLd";
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.slug }));
@@ -59,8 +60,15 @@ export default async function ProjectDetailPage({
     notFound();
   }
 
+  const breadcrumbItems = [
+    { name: "Home", url: siteUrl },
+    { name: "Portfolio", url: `${siteUrl}/projects` },
+    { name: project.name, url: `${siteUrl}/projects/${project.slug}` },
+  ];
+
   return (
     <main className="pb-16">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
         <div className="absolute top-0 right-0 w-[44rem] h-[44rem] bg-primary/25 blur-[140px] rounded-full -translate-y-1/2 translate-x-1/2 anim-ambient" />
         <div className="absolute bottom-0 left-0 w-[44rem] h-[44rem] bg-primary-container/20 blur-[140px] rounded-full translate-y-1/2 -translate-x-1/2 anim-float" />

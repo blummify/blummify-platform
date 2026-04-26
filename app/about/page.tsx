@@ -4,6 +4,7 @@ import Link from "next/link";
 
 import { pageDescriptions } from "../_lib/seo";
 import { siteUrl } from "../_lib/site";
+import BreadcrumbJsonLd from "../_components/BreadcrumbJsonLd";
 
 export const metadata: Metadata = {
   title: "About",
@@ -67,8 +68,14 @@ const coreValues = [
 ] as const;
 
 export default function AboutPage() {
+  const breadcrumbItems = [
+    { name: "Home", url: siteUrl },
+    { name: "About", url: `${siteUrl}/about` },
+  ];
+
   return (
     <main className="pb-16">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
         <div className="absolute top-0 right-0 h-[44rem] w-[44rem] -translate-y-1/2 translate-x-1/2 rounded-full bg-primary/25 blur-[140px] anim-ambient" />
         <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />

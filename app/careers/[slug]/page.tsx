@@ -4,6 +4,7 @@ import { notFound, redirect } from "next/navigation";
 
 import { siteUrl } from "../../_lib/site";
 import { careerRoles, getCareerRoleBySlug } from "../_data";
+import BreadcrumbJsonLd from "../../_components/BreadcrumbJsonLd";
 
 export function generateStaticParams() {
   return careerRoles.map((role) => ({ slug: role.slug }));
@@ -62,8 +63,15 @@ export default async function CareerRoleDetailPage({
 
   const applySubject = encodeURIComponent(`CV Application for ${role.title}`);
 
+  const breadcrumbItems = [
+    { name: "Home", url: siteUrl },
+    { name: "Careers", url: `${siteUrl}/careers` },
+    { name: role.title, url: `${siteUrl}/careers/${role.slug}` },
+  ];
+
   return (
     <main className="pb-16">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
         <div className="absolute top-0 right-0 h-[44rem] w-[44rem] -translate-y-1/2 translate-x-1/2 rounded-full bg-primary/25 blur-[140px] anim-ambient" />
         <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />

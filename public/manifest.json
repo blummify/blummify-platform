@@ -1,0 +1,61 @@
+{
+  "name": "Blummify",
+  "short_name": "Blummify",
+  "description": "We help businesses build and refine their digital presence—websites, apps, brand, and marketing—with straight answers, solid delivery, and work that lasts.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#7AD0A4",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "48x48",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/blummifly-logo.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "categories": ["business", "consulting", "technology"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Services",
+      "short_name": "Services",
+      "description": "View our web, mobile, brand, and marketing services",
+      "url": "/services",
+      "icons": [{ "src": "/icon.png", "sizes": "48x48" }]
+    },
+    {
+      "name": "Portfolio",
+      "short_name": "Portfolio",
+      "description": "View our featured projects and case studies",
+      "url": "/projects",
+      "icons": [{ "src": "/icon.png", "sizes": "48x48" }]
+    },
+    {
+      "name": "Contact",
+      "short_name": "Contact",
+      "description": "Get in touch with our team",
+      "url": "/contact",
+      "icons": [{ "src": "/icon.png", "sizes": "48x48" }]
+    }
+  ]
+}

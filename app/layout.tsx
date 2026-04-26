@@ -43,6 +43,7 @@ export const metadata: Metadata = {
     ],
     shortcut: "/icon.png",
   },
+  manifest: "/manifest.json",
   openGraph: {
     type: "website",
     locale: "en_US",

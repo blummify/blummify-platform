@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { pageDescriptions } from "../_lib/seo";
 import { siteUrl } from "../_lib/site";
+import BreadcrumbJsonLd from "../_components/BreadcrumbJsonLd";
+import ServiceJsonLd from "../_components/ServiceJsonLd";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -16,6 +18,11 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbItems = [
+    { name: "Home", url: siteUrl },
+    { name: "Services", url: `${siteUrl}/services` },
+  ];
+
   const services = [
     {
       id: "web-development",
@@ -69,6 +76,12 @@ export default function ServicesPage() {
 
   return (
     <main className="pb-16">
+      <BreadcrumbJsonLd items={breadcrumbItems} />
+      <ServiceJsonLd
+        name="Digital Consulting Services"
+        description="Web, mobile, brand, and marketing services for businesses that want stronger products and presence online."
+        provider="Blummify"
+      />
       <section className="relative overflow-hidden bg-on-surface shadow-sm">
         <div className="absolute top-0 right-0 h-[44rem] w-[44rem] -translate-y-1/2 translate-x-1/2 rounded-full bg-primary/25 blur-[140px] anim-ambient" />
         <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />
