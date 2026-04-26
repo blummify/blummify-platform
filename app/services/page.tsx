@@ -167,7 +167,7 @@ export default function ServicesPage() {
                   </p>
                   <div className="mt-6 flex items-center justify-between">
                     <Link
-                      href="/contact"
+                      href={`/services/${service.id}`}
                       className="text-primary font-bold font-headline inline-flex items-center gap-2 hover:gap-3 transition-all"
                     >
                       Explore service{" "}
@@ -176,9 +176,9 @@ export default function ServicesPage() {
                       </span>
                     </Link>
                     <Link
-                      href="/contact"
+                      href={`/services/${service.id}`}
                       className="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center transition-transform duration-300 hover:scale-105"
-                      aria-label="Get started"
+                      aria-label="Learn more about this service"
                     >
                       <span className="material-symbols-outlined text-primary">
                         call_made

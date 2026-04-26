@@ -20,6 +20,7 @@ const nextConfig: NextConfig = {
         hostname: "ckmmarfcos.com",
       },
     ],
+    qualities: [75, 90, 92],
   },
 };
 

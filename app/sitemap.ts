@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { careerRoles } from "./careers/_data";
 import { projects } from "./projects/_data";
+import { serviceDetails } from "./services/_data";
 import { siteUrl } from "./_lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -34,5 +35,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...projectRoutes, ...careerDetailRoutes];
+  const serviceDetailRoutes = serviceDetails.map((service) => ({
+    url: `${siteUrl}/services/${service.slug}`,
+    lastModified: new Date(),
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...projectRoutes, ...careerDetailRoutes, ...serviceDetailRoutes];
 }
