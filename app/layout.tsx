@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import HeaderNav from "./_components/HeaderNav";
 import OrganizationJsonLd from "./_components/OrganizationJsonLd";
+import LocalBusinessJsonLd from "./_components/LocalBusinessJsonLd";
 import { defaultSiteDescription, seoKeywords } from "./_lib/seo";
 import { siteUrl } from "./_lib/site";
 import "./globals.css";
@@ -76,6 +77,7 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
+  themeColor: "#7AD0A4",
 };
 
 export default function RootLayout({
@@ -90,6 +92,18 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col">
         <OrganizationJsonLd />
+        <LocalBusinessJsonLd
+          name="Blummify"
+          description="Digital consulting for businesses that want stronger products and presence online—web, mobile, brand, and marketing, delivered with care and follow-through."
+          url={siteUrl}
+          email="info@blummify.com"
+          sameAs={[
+            "https://www.linkedin.com/company/blummify/",
+            "https://www.instagram.com/blummify/",
+            "https://x.com/blummify",
+            "https://www.tiktok.com/@blummify",
+          ]}
+        />
         <div id="top" className="sr-only" />
         <header className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md shadow-sm">
           <div className="flex justify-between items-center px-8 py-2 max-w-7xl mx-auto">

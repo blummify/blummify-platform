@@ -31,7 +31,7 @@ export default function ServicesPage() {
       description:
         "Modern websites and web apps engineered for performance, accessibility, and long-term maintainability.",
       image: {
-        src: "/images/service-web-dev.jpg",
+        src: "/images/service-web-dev.webp",
         alt: "Abstract data visualization with clean green lines",
       },
       metric: "Fast delivery",
@@ -43,7 +43,7 @@ export default function ServicesPage() {
       description:
         "iOS and Android apps built for reliability, speed, and the kind of UX users want to keep.",
       image: {
-        src: "/images/service-mobile-dev.jpg",
+        src: "/images/service-mobile-dev.webp",
         alt: "Close up of hands working on a sleek laptop",
       },
       metric: "Reliable apps",
@@ -55,7 +55,7 @@ export default function ServicesPage() {
       description:
         "A cohesive brand system and UI direction that elevates trust, clarity, and conversion.",
       image: {
-        src: "/images/service-branding.jpg",
+        src: "/images/service-branding.webp",
         alt: "Modern office team collaborating in a bright airy space",
       },
       metric: "Premium look",
@@ -67,7 +67,7 @@ export default function ServicesPage() {
       description:
         "Growth-focused strategy and execution designed to increase visibility and capture qualified leads.",
       image: {
-        src: "/images/service-marketing.jpg",
+        src: "/images/service-marketing.webp",
         alt: "Abstract data visualization with clean green lines",
       },
       metric: "Lead growth",
@@ -142,10 +142,12 @@ export default function ServicesPage() {
                     <Image
                       src={service.image.src}
                       alt={service.image.alt}
-                      fill
+                      width={512}
+                      height={512}
                       sizes="(min-width: 1024px) 360px, 100vw"
                       quality={90}
                       className="object-cover"
+                      loading="lazy"
                     />
                     <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">
                       <span className="material-symbols-outlined text-primary">

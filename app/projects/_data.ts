@@ -19,7 +19,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "Corporate website and multilingual experience for Odutan, designed to present services, projects, and company story with a polished, responsive interface.",
-    imageSrc: "/images/project-odutan.jpg",
+    imageSrc: "/images/project-odutan.webp",
     imageAlt: "Construction team reviewing site plans outdoors",
     services: [
       "Web Development",
@@ -42,7 +42,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "High-impact corporate platform for Bamda Mining & Construction focused on industrial credibility, service clarity, and multilingual communication.",
-    imageSrc: "/images/project-featured.jpg",
+    imageSrc: "/images/project-featured.webp",
     imageAlt: "Heavy-duty mining site operations with large machinery",
     services: [
       "Web Development",
@@ -65,7 +65,7 @@ export const projects: Project[] = [
     year: "2026",
     summary:
       "E-commerce and brand experience for a Ghana-based herbal remedies retailer—shop, categories, search, cart, and checkout built for clarity and conversion.",
-    imageSrc: "/images/project-ckm.jpg",
+    imageSrc: "/images/project-ckm.webp",
     imageAlt: "Marfcos Herbal storefront hero promoting warehouse products",
     services: [
       "Web Development",
@@ -87,7 +87,7 @@ export const projects: Project[] = [
     year: "2025",
     summary:
       "Events and entertainment platform featuring concerts, corporate events, conferences, and community outreach programs with ticket booking and vendor management.",
-    imageSrc: "/images/project-fam.jpg",
+    imageSrc: "/images/project-fam.webp",
     imageAlt: "Live concert stage with vibrant lighting and crowd",
     services: [
       "Web Development",
@@ -110,7 +110,7 @@ export const projects: Project[] = [
     year: "2025",
     summary:
       "Corporate website and digital presence for a full-service IT company specializing in cloud engineering, cybersecurity, data management, and software development for federal and commercial clients.",
-    imageSrc: "/images/project-brix.jpg",
+    imageSrc: "/images/project-brix.webp",
     imageAlt: "Modern data center with server infrastructure and cybersecurity systems",
     services: [
       "Web Development",

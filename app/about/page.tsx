@@ -168,12 +168,14 @@ export default function AboutPage() {
             <div className="lg:col-span-6">
               <div className="relative aspect-square rounded-[2rem] overflow-hidden bg-surface-container shadow-xl">
                 <Image
-                  src="/images/about-mission.jpg"
+                  src="/images/about-mission.webp"
                   alt="Abstract data visualization"
-                  fill
+                  width={512}
+                  height={512}
                   sizes="(min-width: 1024px) 560px, 100vw"
                   quality={90}
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>
@@ -231,12 +233,14 @@ export default function AboutPage() {
             <div className="lg:col-span-5">
               <div className="relative aspect-[4/3] rounded-[2rem] overflow-hidden bg-surface-container shadow-xl">
                 <Image
-                  src="/images/about-story.jpg"
+                  src="/images/about-story.webp"
                   alt="Consulting team collaborating"
-                  fill
+                  width={512}
+                  height={384}
                   sizes="(min-width: 1024px) 520px, 100vw"
                   quality={90}
                   className="object-cover"
+                  loading="lazy"
                 />
               </div>
             </div>

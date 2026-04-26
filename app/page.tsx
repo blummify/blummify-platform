@@ -37,7 +37,7 @@ function CoreSpecializations() {
       description:
         "Modern websites and web apps engineered for performance, accessibility, and maintainability.",
       metric: "Fast delivery",
-      imageSrc: "/images/home-web-dev.jpg",
+      imageSrc: "/images/home-web-dev.webp",
       imageAlt: "Abstract data visualization with clean green lines",
     },
     {
@@ -46,7 +46,7 @@ function CoreSpecializations() {
       description:
         "iOS and Android apps built for reliability, speed, and a polished user experience.",
       metric: "Reliable apps",
-      imageSrc: "/images/home-mobile-dev.jpg",
+      imageSrc: "/images/home-mobile-dev.webp",
       imageAlt: "Close up of hands working on a sleek laptop",
     },
     {
@@ -55,7 +55,7 @@ function CoreSpecializations() {
       description:
         "A cohesive identity and UI system that elevates trust, clarity, and conversion.",
       metric: "Premium look",
-      imageSrc: "/images/home-branding.jpg",
+      imageSrc: "/images/home-branding.webp",
       imageAlt: "Modern office team collaborating in a bright airy space",
     },
     {
@@ -64,7 +64,7 @@ function CoreSpecializations() {
       description:
         "Growth strategy and execution designed to increase visibility and capture qualified leads.",
       metric: "Lead growth",
-      imageSrc: "/images/home-marketing.jpg",
+      imageSrc: "/images/home-marketing.webp",
       imageAlt: "Abstract data visualization with clean green lines",
     },
   ] as const;
@@ -95,10 +95,12 @@ function CoreSpecializations() {
               <Image
                 src={service.imageSrc}
                 alt={service.imageAlt}
-                fill
+                width={512}
+                height={512}
                 sizes="(min-width: 1024px) 360px, 100vw"
                 quality={90}
                 className="object-cover"
+                loading="lazy"
               />
               <span className="absolute top-3 left-3 w-10 h-10 rounded-full bg-white/90 backdrop-blur flex items-center justify-center shadow-sm">
                 <span className="material-symbols-outlined text-primary">
