@@ -122,12 +122,6 @@ export default async function ServiceDetailPage({
                     Get Started
                     <span className="material-symbols-outlined">arrow_forward</span>
                   </Link>
-                  {service.startingPrice && (
-                    <div className="inline-flex items-center gap-2 px-6 py-4 rounded-full bg-white/10 text-white/90 backdrop-blur">
-                      <span className="material-symbols-outlined text-sm">payments</span>
-                      <span className="font-body text-sm">Starting at {service.startingPrice}</span>
-                    </div>
-                  )}
                 </div>
               </div>
               <div className="relative rounded-[2rem] overflow-hidden bg-surface-container shadow-2xl">
@@ -165,15 +159,6 @@ export default async function ServiceDetailPage({
                   </div>
                   <p className="text-2xl font-headline font-bold text-on-surface">{service.timeline}</p>
                 </div>
-                {service.startingPrice && (
-                  <div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="material-symbols-outlined text-primary">payments</span>
-                      <span className="text-sm font-bold uppercase tracking-wider text-on-surface-variant font-label">Starting Price</span>
-                    </div>
-                    <p className="text-2xl font-headline font-bold text-on-surface">{service.startingPrice}</p>
-                  </div>
-                )}
                 <div>
                   <div className="flex items-center gap-2 mb-2">
                     <span className="material-symbols-outlined text-primary">inventory_2</span>
