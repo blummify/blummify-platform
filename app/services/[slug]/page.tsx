@@ -275,7 +275,7 @@ export default async function ServiceDetailPage({
                 Deliverables
               </span>
               <h2 className="mt-6 text-3xl lg:text-4xl font-headline font-bold text-on-surface">
-                What You'll Get
+                What You&apos;ll Get
               </h2>
               <p className="mt-4 text-on-surface-variant font-body leading-relaxed">
                 We provide comprehensive deliverables to ensure your project is complete and ready for launch.
@@ -377,7 +377,7 @@ export default async function ServiceDetailPage({
             Ready to Get Started?
           </h2>
           <p className="text-lg text-white/80 font-body mb-10 leading-relaxed">
-            Let's discuss how we can help you achieve your goals with our{" "}
+            Let&apos;s discuss how we can help you achieve your goals with our{" "}
             {service.title.toLowerCase()} services.
           </p>
           <Link
