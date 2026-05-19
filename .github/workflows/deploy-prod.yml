@@ -14,7 +14,7 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 24
           cache: npm
 
       - name: Install dependencies
@@ -37,18 +37,7 @@ jobs:
     needs: [ci]
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Get release tag
-        id: tag
-        run: |
-          git fetch --tags
-          TAG=$(git tag --sort=-v:refname | grep -E '^v[0-9]+\.[0-9]+\.[0-9]+$' | head -1)
-          echo "tag=${TAG:-v0.0.0}" >> $GITHUB_OUTPUT
-
-      - name: SSH deploy
+      - name: Deploy
         uses: appleboy/ssh-action@v1
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -59,8 +48,51 @@ jobs:
             export NVM_DIR="$HOME/.nvm"
             [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
             cd ${{ secrets.VPS_APP_PATH }}
-            git pull origin main
-            npm ci
-            npm run build
-            pm2 startOrReload ecosystem.config.js --env production --update-env
+
+            PREV_COMMIT=$(git rev-parse HEAD)
+
+            rollback() {
+              echo "Deploy failed — rolling back to $PREV_COMMIT"
+              git reset --hard $PREV_COMMIT
+              npm ci --prefer-offline
+              npm run build
+              pm2 reload blummify-platform
+              pm2 save
+              exit 1
+            }
+
+            git pull origin main       || rollback
+            npm ci                     || rollback
+            npm run build              || rollback
+            pm2 reload blummify-platform || rollback
             pm2 save
+
+            # Health check — give the process 5s to settle then verify it responds
+            sleep 5
+            curl -sf https://blummify.com > /dev/null || rollback
+
+      - name: Notify success
+        if: success()
+        run: |
+          curl -s -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${{ secrets.RESEND_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "from": "deploy@blummify.com",
+              "to": ["oseijoel6111@gmail.com"],
+              "subject": "Blummify deployed successfully",
+              "html": "<p><strong>Deployment successful</strong></p><p>Commit: <code>${{ github.sha }}</code></p><p>Pushed by: ${{ github.actor }}</p><p><a href=\"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\">View run</a></p>"
+            }'
+
+      - name: Notify failure
+        if: failure()
+        run: |
+          curl -s -X POST https://api.resend.com/emails \
+            -H "Authorization: Bearer ${{ secrets.RESEND_API_KEY }}" \
+            -H "Content-Type: application/json" \
+            -d '{
+              "from": "deploy@blummify.com",
+              "to": ["oseijoel6111@gmail.com"],
+              "subject": "Blummify deployment failed — rolled back",
+              "html": "<p><strong>Deployment failed and was rolled back</strong></p><p>Commit: <code>${{ github.sha }}</code></p><p>Pushed by: ${{ github.actor }}</p><p><a href=\"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}\">View logs</a></p>"
+            }'
