@@ -170,8 +170,7 @@ export default function AboutPage() {
                 <Image
                   src="/images/about-mission.webp"
                   alt="Abstract data visualization"
-                  width={512}
-                  height={512}
+                  fill
                   sizes="(min-width: 1024px) 560px, 100vw"
                   quality={90}
                   className="object-cover"
