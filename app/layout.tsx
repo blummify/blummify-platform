@@ -116,7 +116,7 @@ export default function RootLayout({
               className="flex items-center font-headline font-bold text-[#1B1C1D] tracking-tighter transition-transform duration-300 hover:-translate-y-0.5"
               aria-label="Blummify Home"
             >
-              <span className="relative w-30 h-30 overflow-hidden">
+              <span className="relative w-25 h-25 overflow-hidden">
                 <Image
                   src="/blummifly-logo.png"
                   alt="Blummify"
@@ -136,7 +136,7 @@ export default function RootLayout({
             </Link>
           </div>
         </header>
-        <div className="flex-1 pt-[112px]">{children}</div>
+        <div className="flex-1 pt-[116px]">{children}</div>
         <footer className="bg-[#EFEDEF] w-full py-12">
           <div className="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto">
             <div className="mb-8 md:mb-0 text-center md:text-left">
