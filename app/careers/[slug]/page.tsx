@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 
@@ -77,7 +78,8 @@ export default async function CareerRoleDetailPage({
         <div className="absolute bottom-0 left-0 h-[44rem] w-[44rem] translate-y-1/2 -translate-x-1/2 rounded-full bg-primary-container/20 blur-[140px] anim-float" />
         <div className="relative z-10 px-8 py-10 lg:px-16 lg:py-12">
           <div className="mx-auto max-w-7xl">
-            <div className="max-w-4xl">
+            <div className={`flex items-center justify-between gap-8 ${role.image ? "" : "max-w-4xl"}`}>
+            <div className="flex-1 max-w-2xl">
               <div className="flex items-center gap-2 text-sm text-white/70 font-body anim-fade-up">
                 <Link
                   href="/careers"
@@ -124,6 +126,19 @@ export default async function CareerRoleDetailPage({
                   </span>
                 ))}
               </div>
+            </div>
+              {role.image && (
+                <div className="hidden lg:block shrink-0 w-[340px] xl:w-[420px]">
+                  <Image
+                    src={role.image}
+                    alt={role.title}
+                    width={420}
+                    height={420}
+                    className="object-contain drop-shadow-2xl"
+                    priority
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>

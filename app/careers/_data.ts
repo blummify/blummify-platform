@@ -10,6 +10,7 @@ export type CareerRole = {
   responsibilities: string[];
   requirements: string[];
   perks: string[];
+  image?: string;
 };
 
 export const careerRoles: CareerRole[] = [
@@ -53,6 +54,7 @@ export const careerRoles: CareerRole[] = [
       "Creative and supportive work environment",
       "Competitive stipend",
     ],
+    image: "/images/career-digital-marketing-removebg.webp",
   },
   {
     slug: "fullstack",
