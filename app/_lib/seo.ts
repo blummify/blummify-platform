@@ -27,5 +27,5 @@ export const pageDescriptions = {
   contact:
     "Tell us what you need—use the form, email, or WhatsApp. We read every message and usually reply within one business day.",
   careers:
-    "Career opportunity at Blummify: help build one of our platforms using HTML, CSS, Next.js, React.js, Express.js, and Node.js, with stipend support.",
+    "Discover exciting career opportunities at Blummify, a growing company focused on creativity, innovation, and digital transformation",
 } as const;
